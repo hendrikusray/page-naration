@@ -1,0 +1,1839 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Narasi Presentasi 15 Menit — Hendrikus Adi Purnama</title>
+<style>
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+:root {
+  --navy: #0d2b5e;
+  --blue: #1a56a8;
+  --green: #0e7a4a;
+  --orange: #d97706;
+  --gray: #64748b;
+  --border: #e2e8f0;
+}
+body {
+  font-family: "Segoe UI", Georgia, serif;
+  background: #f8fafc;
+  color: #1e293b;
+  line-height: 1.7;
+  max-width: 860px;
+  margin: 0 auto;
+  padding: 32px 24px 80px;
+}
+@media print {
+  body { background: white; padding: 16px; }
+  .slide-block { break-inside: avoid; page-break-inside: avoid; }
+  .no-print { display: none; }
+}
+h1 {
+  font-size: 24px; font-weight: 900; color: var(--navy);
+  border-bottom: 3px solid var(--navy); padding-bottom: 10px; margin-bottom: 6px;
+}
+.meta { font-size: 13px; color: var(--gray); margin-bottom: 32px; }
+.slide-block {
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  margin-bottom: 24px;
+  overflow: hidden;
+  background: white;
+  box-shadow: 0 2px 8px rgba(0,0,0,.05);
+}
+.slide-header {
+  background: var(--navy);
+  color: white;
+  padding: 10px 20px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+}
+.slide-header .sl-num { font-weight: 800; font-size: 13px; }
+.slide-header .sl-title { font-size: 14px; opacity: .9; flex: 1; }
+.slide-header .sl-time {
+  background: rgba(255,255,255,.2);
+  border-radius: 4px;
+  padding: 2px 10px;
+  font-size: 12px;
+  font-weight: 700;
+  white-space: nowrap;
+}
+.slide-body { padding: 20px 24px; }
+.narasi { font-size: 15px; line-height: 1.85; color: #1e293b; }
+.narasi p { margin-bottom: 12px; }
+.narasi p:last-child { margin-bottom: 0; }
+.visual-cue {
+  background: #fef3c7;
+  border-left: 3px solid #f59e0b;
+  border-radius: 0 6px 6px 0;
+  padding: 8px 14px;
+  font-size: 13px;
+  color: #78350f;
+  margin-top: 10px;
+  margin-bottom: 0;
+}
+.visual-cue::before { content: "👆 "; }
+.section-divider-block {
+  background: linear-gradient(135deg, var(--navy), var(--blue));
+  color: white;
+  border-radius: 12px;
+  padding: 14px 24px;
+  margin-bottom: 24px;
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+.section-divider-block .sd-label {
+  font-size: 11px;
+  letter-spacing: .1em;
+  text-transform: uppercase;
+  opacity: .75;
+}
+.section-divider-block .sd-title { font-size: 18px; font-weight: 900; }
+.section-divider-block .sd-time {
+  margin-left: auto;
+  background: rgba(255,255,255,.2);
+  border-radius: 20px;
+  padding: 4px 14px;
+  font-size: 13px;
+  white-space: nowrap;
+}
+.tip {
+  background: #f0fdf4;
+  border: 1px solid #86efac;
+  border-radius: 8px;
+  padding: 10px 14px;
+  font-size: 13px;
+  color: #14532d;
+  margin-top: 10px;
+}
+.tip::before { content: "💡 Tips: "; font-weight: 700; }
+.total-bar {
+  background: var(--navy);
+  color: white;
+  border-radius: 12px;
+  padding: 16px 24px;
+  margin-bottom: 32px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+.total-bar .tb-item { text-align: center; }
+.total-bar .tb-num { font-size: 22px; font-weight: 900; color: #60a5fa; }
+.total-bar .tb-lbl { font-size: 12px; opacity: .8; }
+.legend {
+  display: flex; gap: 16px; flex-wrap: wrap;
+  margin-bottom: 24px; padding: 12px 16px;
+  background: white; border: 1px solid var(--border); border-radius: 8px;
+  font-size: 13px;
+}
+.legend-item { display: flex; align-items: center; gap: 6px; }
+.transition-note {
+  background: #f0f9ff;
+  border: 1px dashed #7dd3fc;
+  border-radius: 8px;
+  padding: 10px 16px;
+  font-size: 13px;
+  color: #0369a1;
+  font-style: italic;
+  margin-bottom: 0;
+}
+/* ── Slide Preview (Screenshot PPT) ── */
+.slide-preview {
+  border: 2px solid #cbd5e1;
+  border-radius: 10px;
+  overflow: hidden;
+  margin: 0 auto 16px;
+  max-width: 700px;
+  width: 88%;
+}
+.sp-chrome { background: #1e3a5f; color: rgba(255,255,255,.88); padding: 5px 14px; font-size: 11px; font-weight: 700; letter-spacing: .04em; }
+.slide-shot { display: block; width: 100%; height: auto; background: white; }
+.slide-screenshot-group { display: grid; gap: 12px; padding: 12px; background: #f8fafc; }
+.slide-screenshot-group figure { margin: 0; border: 1px solid #cbd5e1; border-radius: 8px; overflow: hidden; background: white; }
+.slide-screenshot-group figcaption { padding: 6px 10px; font-size: 11px; font-weight: 700; color: #475569; background: #f1f5f9; }
+.section-slide-preview { margin-top: -8px; margin-bottom: 24px; }
+@media (max-width: 640px) {
+  .slide-preview { width: 100%; max-width: none; }
+}
+/* ── Q&A Accordion ── */
+.qa-accordion .slide-body { display: none; }
+.qa-accordion.qa-open .slide-body { display: block; }
+.qa-accordion .slide-header { cursor: pointer; user-select: none; }
+.qa-accordion .slide-header .sl-time { position: relative; padding-right: 22px; }
+.qa-accordion .slide-header .sl-time::after { content: "▼"; position: absolute; right: 6px; top: 50%; transform: translateY(-50%); font-size: 10px; opacity: .75; }
+.qa-accordion.qa-open .slide-header .sl-time::after { content: "▲"; }
+</style>
+</head>
+<body>
+
+<h1>Narasi Presentasi Seminar Hasil</h1>
+<div class="meta">
+  Hendrikus Adi Purnama · G6501221008 · Program Magister Ilmu Komputer IPB · 11 Mei 2026<br>
+  Target durasi: <strong>15–17 menit</strong> · Kecepatan bicara: ±120 kata/menit · Total estimasi: ~2.000 kata
+</div>
+
+<div class="total-bar">
+  <div class="tb-item">
+    <div class="tb-num">25</div><div class="tb-lbl">Slide PPT</div>
+  </div>
+  <div class="tb-item">
+    <div class="tb-num">15–17'</div><div class="tb-lbl">Total Waktu</div>
+  </div>
+  <div class="tb-item">
+    <div class="tb-num">6'</div><div class="tb-lbl">Pendahuluan</div>
+  </div>
+  <div class="tb-item">
+    <div class="tb-num">1'</div><div class="tb-lbl">Metode</div>
+  </div>
+  <div class="tb-item">
+    <div class="tb-num">8'</div><div class="tb-lbl">Hasil</div>
+  </div>
+  <div class="tb-item">
+    <div class="tb-num">2'</div><div class="tb-lbl">Kesimpulan</div>
+  </div>
+</div>
+
+<div class="legend">
+  <div class="legend-item">⏱ = estimasi waktu per slide</div>
+  <div class="legend-item">👆 = petunjuk apa yang ditunjuk di slide</div>
+  <div class="legend-item">💡 = catatan teknis untuk presenter</div>
+</div>
+
+<!-- ════════════════════════════════════ -->
+<!-- SLIDE 1: COVER -->
+<!-- ════════════════════════════════════ -->
+<div class="slide-block">
+  <div class="slide-header">
+    <span class="sl-num">Slide 1</span>
+    <span class="sl-title">Cover</span>
+    <span class="sl-time">⏱ 30 detik</span>
+  </div>
+  <div class="slide-body">
+    <div class="slide-preview">
+      <div class="sp-chrome">Screenshot Slide 1 — Cover</div>
+      <img class="slide-shot" loading="lazy" src="ppt-screenshots/slide-01.png" alt="Screenshot Slide 1 — Cover">
+    </div>
+    <div class="narasi">
+      <p>Assalamualaikum warahmatullahi wabarakatuh. Selamat pagi, Bapak, Ibu, dan rekan-rekan sekalian. Perkenalkan, saya <strong>Hendrikus Adi Purnama</strong>, NIM G6501221008, dari Program Magister Ilmu Komputer IPB University.</p>
+      <p>Hari ini saya akan menyampaikan hasil penelitian tesis saya — judulnya bisa dilihat langsung di slide. Penelitian ini saya kerjakan di bawah bimbingan Bapak Irman Hermadi dan Bapak Heru Sukoco. Oke, kita mulai.</p>
+    </div>
+  </div>
+</div>
+
+<!-- ════════════════════════════════════ -->
+<!-- SECTION DIVIDER: PENDAHULUAN -->
+<!-- ════════════════════════════════════ -->
+<div class="section-divider-block">
+  <div>
+    <div class="sd-label">Bagian 01</div>
+    <div class="sd-title">PENDAHULUAN</div>
+  </div>
+  <div class="sd-time">⏱ ≈ 5 menit</div>
+</div>
+<div class="slide-preview section-slide-preview">
+  <div class="sp-chrome">Screenshot Slide 2 — Pendahuluan</div>
+  <img class="slide-shot" loading="lazy" src="ppt-screenshots/slide-02.png" alt="Screenshot Slide 2 — Pendahuluan">
+</div>
+
+<!-- ════════════════════════════════════ -->
+<!-- SLIDE 3: LATAR BELAKANG -->
+<!-- ════════════════════════════════════ -->
+<div class="slide-block">
+  <div class="slide-header">
+    <span class="sl-num">Slide 3</span>
+    <span class="sl-title">Latar Belakang</span>
+    <span class="sl-time">⏱ 2 menit</span>
+  </div>
+  <div class="slide-body">
+    <div class="slide-preview">
+      <div class="sp-chrome">Screenshot Slide 3 — Latar Belakang</div>
+      <img class="slide-shot" loading="lazy" src="ppt-screenshots/slide-03.png" alt="Screenshot Slide 3 — Latar Belakang">
+    </div>
+    <div class="narasi">
+      <p>Kita mulai dari gambaran besarnya. Indonesia punya sekitar <strong>39,45 juta petani aktif</strong> yang menggarap <strong>28,2 juta hektar</strong> lahan — sektor ini menyumbang <strong>13% PDB nasional</strong>. Angka yang besar. Tapi di balik angka itu, sebagian besar adalah petani kecil yang menghadapi satu masalah yang sama: <strong>tidak punya akses ke alat pertanian modern.</strong></p>
+      <p>Traktor, pompa irigasi, cultivator — harganya jauh di atas kemampuan petani kecil. Jadi solusinya adalah <strong>sewa</strong>. Pemerintah pun menjalankan program distribusi alat dan subsidi sewa melalui dinas pertanian. Sistem ini sudah berjalan, tapi ada masalah yang tidak bisa diabaikan.</p>
+      <p>Sistem sewanya tidak transparan. Catatan transaksi tersimpan di satu tempat yang hanya bisa diakses oleh pengelola. Aturan biaya bisa berubah tanpa pemberitahuan. Kalau ada subsidi yang harusnya diterima petani, tidak ada cara untuk memverifikasi apakah sudah disalurkan dengan benar atau tidak. Dengan kata lain, <strong>tidak ada rekam jejak yang bisa dipercaya oleh semua pihak sekaligus.</strong></p>
+      <p>Dari situlah penelitian ini berangkat. Pertanyaannya: <em>bisa tidak kita bangun sistem layanan alat pertanian di mana setiap transaksi tercatat secara permanen, tidak bisa dimanipulasi siapa pun, dan bisa diverifikasi kapan saja oleh petani, penyedia, maupun pengawas dari dinas?</em> Jawaban yang kami usulkan adalah: <strong>smart contract di atas jaringan blockchain.</strong></p>
+    </div>
+    <div class="visual-cue">Tunjuk tiga angka statistik (39,45 jt — 28,2 jt ha — 13%), lalu pindah ke kotak masalah merah, lalu kotak solusi biru.</div>
+  </div>
+</div>
+
+<!-- ════════════════════════════════════ -->
+<!-- SLIDE 4: APA ITU SC DAN BLOCKCHAIN? (Transition) -->
+<!-- ════════════════════════════════════ -->
+<div class="slide-block">
+  <div class="slide-header">
+    <span class="sl-num">Slide 4</span>
+    <span class="sl-title">"Apa Itu Smart Contract dan Blockchain?" — Slide Transisi</span>
+    <span class="sl-time">⏱ 15 detik</span>
+  </div>
+  <div class="slide-body">
+    <div class="slide-preview">
+      <div class="sp-chrome">Screenshot Slide 4 — Slide Transisi</div>
+      <img class="slide-shot" loading="lazy" src="ppt-screenshots/slide-04.png" alt="Screenshot Slide 4 — Slide Transisi">
+    </div>
+    <div class="narasi">
+      <p>Sebelum kita lanjut, ada satu pertanyaan yang perlu kita jawab bersama: <strong>apa sebenarnya blockchain dan smart contract itu?</strong></p>
+    </div>
+    <div class="tip">Slide ini hanya satu kalimat transisi. Langsung lanjut ke slide berikutnya.</div>
+  </div>
+</div>
+
+<!-- ════════════════════════════════════ -->
+<!-- SLIDE 5: BLOCKCHAIN & SMART CONTRACT -->
+<!-- ════════════════════════════════════ -->
+<div class="slide-block">
+  <div class="slide-header">
+    <span class="sl-num">Slide 5</span>
+    <span class="sl-title">Blockchain & Smart Contract — Konsep dan Analogi</span>
+    <span class="sl-time">⏱ 1 menit</span>
+  </div>
+  <div class="slide-body">
+    <div class="slide-preview">
+      <div class="sp-chrome">Screenshot Slide 5 — Blockchain &amp; Smart Contract</div>
+      <img class="slide-shot" loading="lazy" src="ppt-screenshots/slide-05.png" alt="Screenshot Slide 5 — Blockchain &amp; Smart Contract">
+    </div>
+    <div class="narasi">
+      <p>Apa itu blockchain? Bayangkan sebuah buku catatan yang salinannya dipegang ribuan orang sekaligus. Setiap kali ada catatan baru masuk, semua orang langsung punya salinan yang sama — dan tidak ada satu pun yang bisa mengubah catatan lama tanpa semua orang tahu. Tiga sifat utamanya: <strong>terdesentralisasi</strong> — tidak ada pemilik tunggal yang bisa kendalikan semuanya; <strong>immutable</strong> — data tidak bisa diubah setelah masuk; dan <strong>transparan</strong> — siapa pun bisa memverifikasi kapan saja tanpa izin.</p>
+      <p>Di atas blockchain, ada yang namanya <em>smart contract</em> — peraturan yang ditulis permanen di dalam buku catatan itu dan berjalan otomatis. Cara kerjanya seperti <strong>mesin vending otomatis</strong>: masukkan uang, pilih barang — kalau syaratnya terpenuhi, barang langsung keluar sendiri tanpa penjaga toko, tanpa negosiasi. Di sistem ini: petani kirim transaksi → smart contract periksa syarat → jika terpenuhi, dana dikunci dan status sewa tercatat permanen.</p>
+    </div>
+    <div class="visual-cue">Tunjuk tiga karakteristik (terdesentralisasi → immutable → transparan), lalu diagram node jaringan, lalu ilustrasi mesin vending. Referensi ada di slide sebagai pendukung visual.</div>
+    <div class="tip">Referensi (Nakamoto 2008, Baliga 2020, dll.) ada di slide — tidak perlu disebut satu per satu dalam bicara. Kuasai konsepnya, bukan hafal nama pengarang. Kalau dosen tanya referensi, sebut saat itu saja.</div>
+  </div>
+</div>
+
+<!-- ════════════════════════════════════ -->
+<!-- SLIDE 6: PERBANDINGAN SISTEM BIASA VS BLOCKCHAIN -->
+<!-- ════════════════════════════════════ -->
+<div class="slide-block">
+  <div class="slide-header">
+    <span class="sl-num">Slide 6</span>
+    <span class="sl-title">Apa Bedanya Sistem Biasa dengan Berbasis Blockchain?</span>
+    <span class="sl-time">⏱ 45 detik</span>
+  </div>
+  <div class="slide-body">
+    <div class="slide-preview">
+      <div class="sp-chrome">Screenshot Slide 6 — Perbandingan Sistem Biasa vs Blockchain</div>
+      <img class="slide-shot" loading="lazy" src="ppt-screenshots/slide-06.png" alt="Screenshot Slide 6 — Perbandingan Sistem Biasa vs Blockchain">
+    </div>
+    <div class="narasi">
+      <p>Slide ini membandingkan langsung sistem konvensional dengan sistem berbasis blockchain dalam enam aspek. Di sistem konvensional: satu server, data bisa diubah siapa saja yang punya akses, aturan biaya tidak transparan, distribusi dana manual, dan rekam jejak bisa dihapus. Di sistem blockchain: data tersebar, tidak bisa diubah, aturan bisa diverifikasi siapa saja, distribusi otomatis oleh smart contract, dan rekam jejak permanen.</p>
+      <p>Analoginya: sistem konvensional seperti <strong>rekening bank</strong> — kita harus percaya bank tidak salah catat. Sistem blockchain seperti <strong>buku kas koperasi</strong> yang salinannya dipegang semua anggota sekaligus — tidak ada satu pun yang bisa ubah tanpa semua tahu.</p>
+    </div>
+    <div class="visual-cue">Baca tabel baris per baris — kolom merah konvensional vs kolom biru blockchain. Akhiri dengan analogi bank vs koperasi.</div>
+  </div>
+</div>
+
+<!-- ════════════════════════════════════ -->
+<!-- SLIDE 7: MASALAH SMART CONTRACT BIASA -->
+<!-- ════════════════════════════════════ -->
+<div class="slide-block">
+  <div class="slide-header">
+    <span class="sl-num">Slide 7</span>
+    <span class="sl-title">Masalah Smart Contract Biasa — dan Solusinya</span>
+    <span class="sl-time">⏱ 45 detik</span>
+  </div>
+  <div class="slide-body">
+    <div class="slide-preview">
+      <div class="sp-chrome">Screenshot Slide 7 — Masalah Smart Contract Biasa &amp; Solusinya</div>
+      <img class="slide-shot" loading="lazy" src="ppt-screenshots/slide-07.png" alt="Screenshot Slide 7 — Masalah Smart Contract Biasa &amp; Solusinya">
+    </div>
+    <div class="narasi">
+      <p>Meski blockchain menjanjikan, smart contract konvensional punya tiga kelemahan yang relevan. <strong>Pertama</strong>, aturan biaya tidak bisa diubah setelah kontrak dipasang — bayangkan peraturan yang dicetak permanen di papan, tidak bisa diganti tanpa buang papannya. <strong>Kedua</strong>, kalau aturan mau diubah, harus pasang kontrak baru dari awal dengan "alamat" berbeda — semua riwayat transaksi lama ikut terputus. <strong>Ketiga</strong>, memasang ulang kontrak itu sangat mahal secara komputasi — inilah yang nanti kita buktikan dengan angka gas.</p>
+      <p>Penelitian ini mengusulkan dua solusi. <strong>Solusi A — pola Factory-Proxy</strong>: kontrak bisa diperbarui isinya tanpa ganti alamat, seperti merenovasi isi rumah tanpa pindah ke alamat baru. <strong>Solusi B — Rules Engine berbasis RPN</strong>: aturan biaya tersimpan sebagai instruksi yang bisa diperbarui kapan saja. Contoh sederhana: dalam penulisan biasa "3 + 4 = 7", dalam RPN ditulis "<code>3 4 +</code>" — angkanya dulu, baru operator di belakang.</p>
+    </div>
+    <div class="visual-cue">Tunjuk tiga badge masalah merah dengan referensinya, lalu kotak solusi A dan B, lalu contoh notasi RPN.</div>
+  </div>
+</div>
+
+<!-- ════════════════════════════════════ -->
+<!-- SLIDE 8: RUMUSAN MASALAH -->
+<!-- ════════════════════════════════════ -->
+<div class="slide-block">
+  <div class="slide-header">
+    <span class="sl-num">Slide 8</span>
+    <span class="sl-title">Rumusan Masalah</span>
+    <span class="sl-time">⏱ 30 detik</span>
+  </div>
+  <div class="slide-body">
+    <div class="slide-preview">
+      <div class="sp-chrome">Screenshot Slide 8 — Rumusan Masalah</div>
+      <img class="slide-shot" loading="lazy" src="ppt-screenshots/slide-08.png" alt="Screenshot Slide 8 — Rumusan Masalah">
+    </div>
+    <div class="narasi">
+      <p>Dari latar belakang tersebut, penelitian ini merumuskan tiga pertanyaan utama. <strong>Pertama:</strong> bagaimana merancang arsitektur smart contract yang fleksibel dan dapat diperbarui menggunakan pola factory-proxy EIP-1967? <strong>Kedua:</strong> seberapa efisien pendekatan RPN setRules() dalam hal biaya komputasi atau gas dibandingkan redeployment kontrak penuh? <strong>Ketiga:</strong> bagaimana menjamin transparansi dan ketertelusuran seluruh transaksi sewa yang dapat diverifikasi secara independen?</p>
+    </div>
+    <div class="visual-cue">Tunjuk tiga badge nomor 1, 2, 3 secara berurutan.</div>
+  </div>
+</div>
+
+<!-- ════════════════════════════════════ -->
+<!-- SLIDE 9: TUJUAN + MANFAAT -->
+<!-- ════════════════════════════════════ -->
+<div class="slide-block">
+  <div class="slide-header">
+    <span class="sl-num">Slide 9</span>
+    <span class="sl-title">Tujuan Penelitian + Manfaat</span>
+    <span class="sl-time">⏱ 30 detik</span>
+  </div>
+  <div class="slide-body">
+    <div class="slide-preview">
+      <div class="sp-chrome">Screenshot Slide 9 — Tujuan Penelitian &amp; Manfaat</div>
+      <img class="slide-shot" loading="lazy" src="ppt-screenshots/slide-09.png" alt="Screenshot Slide 9 — Tujuan Penelitian &amp; Manfaat">
+    </div>
+    <div class="narasi">
+      <p>Tujuan penelitian ini ada tiga, menjawab langsung rumusan masalah tadi: <strong>satu</strong>, merancang arsitektur kontrak pintar berbasis factory-proxy EIP-1967 dengan RPN rules engine yang dapat diperbarui tanpa redeployment; <strong>dua</strong>, mengukur dan membandingkan efisiensi biaya komputasi antara RPN setRules() dan redeployment kontrak penuh; <strong>tiga</strong>, menjamin transparansi dan ketertelusuran transaksi sewa yang dapat diverifikasi secara independen.</p>
+      <p>Manfaat penelitian: penelitian ini menghasilkan prototipe tervalidasi yang membuktikan penerapan factory-proxy EIP-1967 dan RPN rules engine pada sistem sewa alat pertanian, dan dapat dikembangkan lebih lanjut ke skala produksi.</p>
+    </div>
+    <div class="visual-cue">Tunjuk tiga tujuan, lalu satu kalimat manfaat di bawah.</div>
+  </div>
+</div>
+
+<!-- ════════════════════════════════════ -->
+<!-- SECTION DIVIDER: METODE -->
+<!-- ════════════════════════════════════ -->
+<div class="section-divider-block">
+  <div>
+    <div class="sd-label">Bagian 02</div>
+    <div class="sd-title">METODE PENELITIAN</div>
+  </div>
+  <div class="sd-time">⏱ ≈ 1 menit</div>
+</div>
+<div class="slide-preview section-slide-preview">
+  <div class="sp-chrome">Screenshot Slide 10 — Metode Penelitian</div>
+  <img class="slide-shot" loading="lazy" src="ppt-screenshots/slide-10.png" alt="Screenshot Slide 10 — Metode Penelitian">
+</div>
+
+<!-- ════════════════════════════════════ -->
+<!-- SLIDE 11: PENDEKATAN PROTOTYPING -->
+<!-- ════════════════════════════════════ -->
+<div class="slide-block">
+  <div class="slide-header">
+    <span class="sl-num">Slide 11</span>
+    <span class="sl-title">Pendekatan Prototyping</span>
+    <span class="sl-time">⏱ 1 menit</span>
+  </div>
+  <div class="slide-body">
+    <div class="slide-preview">
+      <div class="sp-chrome">Screenshot Slide 11 — Pendekatan Prototyping</div>
+      <img class="slide-shot" loading="lazy" src="ppt-screenshots/slide-11.png" alt="Screenshot Slide 11 — Pendekatan Prototyping">
+    </div>
+    <div class="narasi">
+      <p>Penelitian ini menggunakan <strong>metode prototyping</strong>, dengan empat tahap iteratif. <strong>Requirements Planning</strong> — identifikasi kebutuhan fungsional: alur sewa, pengelolaan kontrak, auditabilitas transaksi. <strong>Quick Design</strong> — perancangan arsitektur smart contract factory-proxy dan skema data on-chain/off-chain. <strong>Build Prototype</strong> — implementasi iteratif dari smart contract Solidity, backend Node.js, hingga frontend React dengan MetaMask. <strong>Refine and Validate</strong> — pengukuran gas, perbandingan efisiensi, verifikasi transparansi on-chain.</p>
+      <p>Kenapa prototyping? Karena blockchain memiliki risiko tinggi jika salah desain dari awal — smart contract yang sudah di-deploy sangat sulit diubah. Dengan validasi berlapis di setiap tahap, kesalahan fundamental bisa dideteksi lebih awal sebelum terlanjur ke lapisan berikutnya.</p>
+    </div>
+    <div class="visual-cue">Tunjuk empat kartu tahap dari kiri ke kanan, lalu kotak "Kenapa Prototyping?" di bawah.</div>
+  </div>
+</div>
+
+<!-- ════════════════════════════════════ -->
+<!-- SECTION DIVIDER: HASIL -->
+<!-- ════════════════════════════════════ -->
+<div class="section-divider-block">
+  <div>
+    <div class="sd-label">Bagian 03</div>
+    <div class="sd-title">HASIL DAN PEMBAHASAN</div>
+  </div>
+  <div class="sd-time">⏱ ≈ 7 menit</div>
+</div>
+<div class="slide-preview section-slide-preview">
+  <div class="sp-chrome">Screenshot Slide 12 — Hasil dan Pembahasan</div>
+  <img class="slide-shot" loading="lazy" src="ppt-screenshots/slide-12.png" alt="Screenshot Slide 12 — Hasil dan Pembahasan">
+</div>
+
+<!-- ════════════════════════════════════ -->
+<!-- SLIDE 13: DIAGRAM USE CASE -->
+<!-- ════════════════════════════════════ -->
+<div class="slide-block">
+  <div class="slide-header">
+    <span class="sl-num">Slide 13</span>
+    <span class="sl-title">Diagram Use Case</span>
+    <span class="sl-time">⏱ 1 menit</span>
+  </div>
+  <div class="slide-body">
+    <div class="slide-preview">
+      <div class="sp-chrome">Screenshot Slide 13 — Diagram Use Case (Quick Design)</div>
+      <img class="slide-shot" loading="lazy" src="ppt-screenshots/slide-13.png" alt="Screenshot Slide 13 — Diagram Use Case (Quick Design)">
+    </div>
+    <div class="narasi">
+      <p>Sistem ini melibatkan tiga aktor dengan tujuh use case. <strong>Admin</strong> mengelola kategori kontrak pintar (UC-1) dan memperbarui aturan biaya berbasis RPN (UC-2). <strong>Penyedia Alat</strong> mendaftarkan dan mengelola alat (UC-3) serta mengelola subsidi penyedia (UC-4). <strong>Petani</strong> melakukan penyewaan alat pertanian (UC-5) dan pengembalian beserta settlement dana (UC-6). Semua aktor bisa mengakses riwayat dan monitoring audit on-chain (UC-7).</p>
+      <p>Yang membedakan dari sistem konvensional: UC-1 (perubahan aturan biaya), UC-3 (registrasi alat), UC-5 (sewa), dan UC-6 (pengembalian &amp; settlement) semua berinteraksi langsung dengan smart contract — tercatat permanen dan bisa diverifikasi siapa saja secara independen.</p>
+    </div>
+    <div class="visual-cue">Tunjuk masing-masing aktor dan garis use case-nya: Admin → UC-1/UC-2, Penyedia → UC-3/UC-4, Petani → UC-5/UC-6, semua → UC-7. Tekankan "ini yang langsung interaksi ke blockchain" saat tunjuk UC-1, UC-3, UC-5, UC-6.</div>
+  </div>
+</div>
+
+<!-- ════════════════════════════════════ -->
+<!-- SLIDE 14: ARSITEKTUR SISTEM -->
+<!-- ════════════════════════════════════ -->
+<div class="slide-block">
+  <div class="slide-header">
+    <span class="sl-num">Slide 14</span>
+    <span class="sl-title">Arsitektur Sistem</span>
+    <span class="sl-time">⏱ 2 menit</span>
+  </div>
+  <div class="slide-body">
+    <div class="slide-preview">
+      <div class="sp-chrome">Screenshot Slide 14 — Arsitektur Sistem (3 Layer)</div>
+      <img class="slide-shot" loading="lazy" src="ppt-screenshots/slide-14.png" alt="Screenshot Slide 14 — Arsitektur Sistem (3 Layer)">
+    </div>
+    <div class="narasi">
+      <p>Arsitektur sistem ini terbagi tiga lapisan. <strong>Lapisan frontend</strong>: React + MetaMask, dapat diakses oleh tiga jenis pengguna — Admin, Penyedia, dan Petani. MetaMask berfungsi sebagai dompet digital untuk menandatangani transaksi ke blockchain.</p>
+      <p><strong>Lapisan backend</strong>: Node.js + Express dengan MongoDB dan Ethers.js V6. Ini adalah lapisan off-chain — menerima request dari frontend dan menyimpan salinan data untuk performa UI. Tetapi ini bukan sumber kebenaran utama.</p>
+      <p><strong>Lapisan on-chain</strong>: lima smart contract yang saling terhubung — <em>ServiceFactory</em> (pusat manajemen + registry admin), <em>ServiceCategoryProxy</em> (alamat tetap, upgradeable), <em>ServiceCategoryV2</em> (logika bisnis + RPN rules engine), <em>EquipmentRegistry</em> (anchor metadata alat), dan <em>IdentityRegistry</em> (manajemen identitas dan peran).</p>
+      <p>Prinsip kunci: <strong>smart contract adalah sumber kebenaran utama</strong>. MongoDB hanya cache untuk kenyamanan UI — jika database dimanipulasi, data on-chain tetap bisa diverifikasi siapa saja secara independen.</p>
+      <p>Kenapa dipisah antara on-chain dan off-chain? Karena membaca data dari blockchain itu lambat dan mahal jika dilakukan untuk setiap tampilan UI. Bayangkan setiap kali halaman daftar alat dibuka, harus query ribuan blok — itu tidak efisien. Jadi MongoDB dipakai untuk kecepatan tampilan, tapi untuk hal-hal kritis seperti settle dana dan verifikasi aturan, tetap mengacu ke on-chain.</p>
+    </div>
+    <div class="visual-cue">Tunjuk tiga tier dari atas ke bawah: Frontend → Backend → On-chain. Tekankan label "off-chain" dan "on-chain" di sisi kanan. Akhiri dengan prinsip "smart contract = sumber kebenaran."</div>
+    <div class="tip">Slide ini paling teknis. Bicara pelan dan tunjuk setiap komponen satu per satu.</div>
+  </div>
+</div>
+
+<!-- ════════════════════════════════════ -->
+<!-- SLIDE 15: IMPLEMENTASI PROTOTYPE -->
+<!-- ════════════════════════════════════ -->
+<div class="slide-block">
+  <div class="slide-header">
+    <span class="sl-num">Slide 15</span>
+    <span class="sl-title">Implementasi Prototype — Tampilan Aplikasi</span>
+    <span class="sl-time">⏱ 30 detik</span>
+  </div>
+  <div class="slide-body">
+    <div class="slide-preview">
+      <div class="sp-chrome">Screenshot Slide 15 — Implementasi Prototype React JS</div>
+      <img class="slide-shot" loading="lazy" src="ppt-screenshots/slide-15.png" alt="Screenshot Slide 15 — Implementasi Prototype React JS">
+    </div>
+    <div class="narasi">
+      <p>Prototipe diimplementasikan menggunakan React JS. Di sisi kiri, tampilan <strong>perubahan aturan kategori</strong> — admin bisa memperbarui aturan biaya melalui antarmuka visual yang langsung mengirim transaksi ke smart contract. Di sisi kanan, tampilan <strong>riwayat transaksi</strong> — menampilkan perbandingan data database dan data on-chain secara berdampingan, memungkinkan admin memverifikasi konsistensinya.</p>
+    </div>
+    <div class="visual-cue">Tunjuk tampilan kiri (perubahan aturan) lalu tampilan kanan (riwayat transaksi DB vs On-chain).</div>
+  </div>
+</div>
+
+<!-- ════════════════════════════════════ -->
+<!-- SLIDE 16: PERUBAHAN KATEGORI (SMART CONTRACT) -->
+<!-- ════════════════════════════════════ -->
+<div class="slide-block">
+  <div class="slide-header">
+    <span class="sl-num">Slide 16</span>
+    <span class="sl-title">Perubahan Kategori — Smart Contract</span>
+    <span class="sl-time">⏱ 1 menit</span>
+  </div>
+  <div class="slide-body">
+    <div class="slide-preview">
+      <div class="sp-chrome">Screenshot Slide 16 — Perubahan Kategori Smart Contract</div>
+      <img class="slide-shot" loading="lazy" src="ppt-screenshots/slide-16.png" alt="Screenshot Slide 16 — Perubahan Kategori Smart Contract">
+    </div>
+    <div class="narasi">
+      <p>Inilah bukti nyata fleksibilitas sistem. Di terminal, kita bisa lihat event <code>RulesUpdatedSigned</code> — setiap kali aturan biaya diperbarui, smart contract memancarkan event ini yang tercatat permanen di blockchain.</p>
+      <p>Aturan biaya ditulis dalam format RPN — cara ringkas menyimpan instruksi perhitungan di dalam smart contract. Contoh konkret: untuk menghitung biaya 10% dari harga alat Rp 50.000 — instruksinya hanya tiga langkah: <strong>ambil harga alat</strong> → <strong>ambil angka 10</strong> → <strong>hitung persentase</strong>. Hasilnya: 10% × Rp 50.000 = <strong>Rp 5.000</strong>. Instruksi tiga langkah ini bisa diganti kapan saja — misalnya diubah jadi 15% saat musim panen — tanpa perlu pasang ulang kontrak dari awal.</p>
+    </div>
+    <div class="visual-cue">Tunjuk terminal output di atas, lalu tabel opcode, lalu contoh perhitungan PUSH→PUSH→PERCENT = Rp 5.000 di bawah.</div>
+  </div>
+</div>
+
+<!-- ════════════════════════════════════ -->
+<!-- SLIDE 17: RIWAYAT ON-CHAIN + GAS MEASUREMENT -->
+<!-- ════════════════════════════════════ -->
+<div class="slide-block">
+  <div class="slide-header">
+    <span class="sl-num">Slide 17</span>
+    <span class="sl-title">Riwayat On-Chain Pertanian + Pengukuran Gas</span>
+    <span class="sl-time">⏱ 1 menit</span>
+  </div>
+  <div class="slide-body">
+    <div class="slide-preview">
+      <div class="sp-chrome">Screenshot Slide 17 — Riwayat On-Chain &amp; Efisiensi Gas</div>
+      <img class="slide-shot" loading="lazy" src="ppt-screenshots/slide-17.png" alt="Screenshot Slide 17 — Riwayat On-Chain &amp; Efisiensi Gas">
+    </div>
+    <div class="narasi">
+      <p>Di sisi kiri, data sewa yang tersimpan on-chain — dalam format JSON yang bisa diakses dan diverifikasi siapa saja tanpa perlu akses ke database. Ini adalah bukti transparansi: rentalId, toolId, alamat petani, status, biaya total — semua tercatat permanen.</p>
+      <p>Di sisi kanan, hasil pengukuran gas. RPN setRules() mengonsumsi <strong>495.962 gas</strong>. Redeployment kontrak penuh mengonsumsi <strong>3.604.010 gas</strong>. Rasio: <strong>7,3 kali lebih hemat</strong>. Angka ini bukan estimasi — ini hasil pengukuran langsung dari eksekusi di jaringan Hardhat.</p>
+    </div>
+    <div class="visual-cue">Tunjuk JSON data di kiri, lalu terminal gas measurement di kanan. Beri jeda saat menyebut angka 495.962 dan 3.604.010.</div>
+    <div class="tip">Angka gas ini yang paling penting untuk pertanyaan dosen. Hafal: 495.962 vs 3.604.010 = 7,3×.</div>
+  </div>
+</div>
+
+<!-- ════════════════════════════════════ -->
+<!-- SLIDE 18: PERBANDINGAN RPN VS DEPLOY ULANG -->
+<!-- ════════════════════════════════════ -->
+<div class="slide-block">
+  <div class="slide-header">
+    <span class="sl-num">Slide 18</span>
+    <span class="sl-title">Perbandingan: RPN vs Deploy Ulang — Tabel Lengkap</span>
+    <span class="sl-time">⏱ 1 menit</span>
+  </div>
+  <div class="slide-body">
+    <div class="slide-preview">
+      <div class="sp-chrome">Screenshot Slide 18 — Perbandingan RPN setRules() vs Redeployment Penuh</div>
+      <img class="slide-shot" loading="lazy" src="ppt-screenshots/slide-18.png" alt="Screenshot Slide 18 — Perbandingan RPN setRules() vs Redeployment Penuh">
+    </div>
+    <div class="narasi">
+      <p>Ini adalah perbandingan lengkap antara dua pendekatan. Dengan RPN setRules(): tidak perlu deploy kontrak baru, alamat tetap sama, riwayat sewa tetap terhubung, setiap transaksi menyimpan snapshot versi aturan saat itu, biaya 495.962 gas, dan praktis untuk perubahan rutin.</p>
+      <p>Dengan redeployment: setiap perubahan kebijakan butuh kontrak baru dengan alamat baru, semua referensi harus diupdate manual, riwayat lama terputus, tidak ada rekam jejak versi, biaya 3.604.010 gas, dan tidak praktis karena terlalu mahal dan berisiko.</p>
+      <p>Kesimpulan visual: <strong>7,3 kali lebih hemat</strong> — ini kontribusi terukur penelitian ini.</p>
+      <p>Dan ini bukan sekadar angka. Dalam konteks sistem yang aturannya bisa berubah-ubah — misalnya tarif sewa naik musim panen, atau ada kebijakan diskon dari dinas — kemampuan memperbarui aturan dengan biaya rendah tanpa mengorbankan transparansi adalah nilai nyata yang ditawarkan arsitektur ini.</p>
+    </div>
+    <div class="visual-cue">Baca tabel baris per baris, tunjuk kolom biru (RPN) vs merah (Redeployment). Akhiri dengan angka besar "7,3×" di kartu hijau.</div>
+  </div>
+</div>
+
+<!-- ════════════════════════════════════ -->
+<!-- SECTION DIVIDER: KESIMPULAN -->
+<!-- ════════════════════════════════════ -->
+<div class="section-divider-block">
+  <div>
+    <div class="sd-label">Bagian 04</div>
+    <div class="sd-title">KESIMPULAN &amp; SARAN</div>
+  </div>
+  <div class="sd-time">⏱ ≈ 2 menit</div>
+</div>
+<div class="slide-preview section-slide-preview">
+  <div class="sp-chrome">Screenshot Slide 19 — Kesimpulan &amp; Saran</div>
+  <img class="slide-shot" loading="lazy" src="ppt-screenshots/slide-19.png" alt="Screenshot Slide 19 — Kesimpulan &amp; Saran">
+</div>
+
+<!-- ════════════════════════════════════ -->
+<!-- SLIDE 20: KESIMPULAN -->
+<!-- ════════════════════════════════════ -->
+<div class="slide-block">
+  <div class="slide-header">
+    <span class="sl-num">Slide 20</span>
+    <span class="sl-title">Kesimpulan Penelitian</span>
+    <span class="sl-time">⏱ 1,5 menit</span>
+  </div>
+  <div class="slide-body">
+    <div class="slide-preview">
+      <div class="sp-chrome">Screenshot Slide 20 — Kesimpulan Penelitian</div>
+      <img class="slide-shot" loading="lazy" src="ppt-screenshots/slide-20.png" alt="Screenshot Slide 20 — Kesimpulan Penelitian">
+    </div>
+    <div class="narasi">
+      <p>Penelitian ini berhasil merancang, mengimplementasikan, dan memvalidasi prototipe sistem dengan tiga kesimpulan yang menjawab langsung tujuan penelitian.</p>
+      <p><strong>Tujuan pertama: fleksibilitas dan upgradeability.</strong> Terbukti. Pola factory-proxy EIP-1967 berhasil diterapkan — upgrade dari V1 ke V2 berhasil dilakukan tanpa memutus referensi alamat kontrak dan tanpa menghilangkan data sewa yang sudah ada. RPN rules engine memungkinkan perubahan kebijakan kapan saja tanpa redeployment.</p>
+      <p><strong>Tujuan kedua: efisiensi biaya komputasi atau gas.</strong> Terbukti. Pengukuran menunjukkan RPN setRules() hanya mengonsumsi <strong>495.962 gas</strong>, dibandingkan <strong>3.604.010 gas</strong> untuk redeployment penuh — 7,3 kali lebih hemat. Ini menjawab secara kuantitatif bahwa RPN jauh lebih praktis untuk perubahan kebijakan yang rutin.</p>
+      <p><strong>Tujuan ketiga: transparansi dan ketertelusuran transaksi.</strong> Terbukti. Semua transaksi sewa, perubahan aturan, dan aliran dana tercatat sebagai event on-chain yang dapat diverifikasi siapa saja secara independen. Setiap sewa menyimpan snapshot versi aturan saat itu — audit trail historis tetap utuh meskipun aturan berubah.</p>
+    </div>
+    <div class="visual-cue">Tunjuk tiga kotak kesimpulan secara berurutan. Beri jeda setelah setiap poin.</div>
+    <div class="tip">Bicara tegas di sini — ini adalah inti jawaban penelitian. Jangan terburu-buru. Ulangi angka 495.962 dan 3.604.010 agar audiens mengingatnya.</div>
+  </div>
+</div>
+
+<!-- ════════════════════════════════════ -->
+<!-- SLIDE 21: SARAN -->
+<!-- ════════════════════════════════════ -->
+<div class="slide-block">
+  <div class="slide-header">
+    <span class="sl-num">Slide 21</span>
+    <span class="sl-title">Saran dan Rekomendasi</span>
+    <span class="sl-time">⏱ 30 detik</span>
+  </div>
+  <div class="slide-body">
+    <div class="slide-preview">
+      <div class="sp-chrome">Screenshot Slide 21 — Saran dan Rekomendasi</div>
+      <img class="slide-shot" loading="lazy" src="ppt-screenshots/slide-21.png" alt="Screenshot Slide 21 — Saran dan Rekomendasi">
+    </div>
+    <div class="narasi">
+      <p>Sebagai saran pengembangan ke depan, ada empat arah: <strong>verifikasi keamanan formal</strong> agar jaminan keamanan kontrak dapat dibuktikan secara matematis; <strong>perluasan rules engine</strong> untuk mendukung logika kondisional yang lebih kompleks; <strong>tata kelola terdesentralisasi</strong> berbasis voting on-chain agar tidak bergantung pada satu admin; dan <strong>uji kelayakan di jaringan publik</strong> termasuk opsi Layer 2 seperti Polygon atau Arbitrum.</p>
+    </div>
+    <div class="visual-cue">Tunjuk empat badge saran secara berurutan. Tidak perlu detail — cukup sebutkan judulnya.</div>
+  </div>
+</div>
+
+<!-- ════════════════════════════════════ -->
+<!-- SECTION DIVIDER: DAFTAR PUSTAKA -->
+<!-- ════════════════════════════════════ -->
+<div class="section-divider-block" style="background: linear-gradient(135deg, #1e293b, #334155);">
+  <div>
+    <div class="sd-label">Bagian 05</div>
+    <div class="sd-title">DAFTAR PUSTAKA</div>
+  </div>
+  <div class="sd-time">⏱ Visual only</div>
+</div>
+
+<!-- ════════════════════════════════════ -->
+<!-- SLIDE 22-24: DAFTAR PUSTAKA (visual) -->
+<!-- ════════════════════════════════════ -->
+<div class="slide-block">
+  <div class="slide-header">
+    <span class="sl-num">Slide 22–24</span>
+    <span class="sl-title">Daftar Pustaka</span>
+    <span class="sl-time">⏱ Tidak perlu narasi — visual only</span>
+  </div>
+  <div class="slide-body">
+    <div class="slide-preview">
+      <div class="sp-chrome">Screenshot Slide 22-24 — Daftar Pustaka</div>
+      <div class="slide-screenshot-group">
+        <figure>
+          <img class="slide-shot" loading="lazy" src="ppt-screenshots/slide-22.png" alt="Screenshot Slide 22">
+          <figcaption>Slide 22</figcaption>
+        </figure>
+        <figure>
+          <img class="slide-shot" loading="lazy" src="ppt-screenshots/slide-23.png" alt="Screenshot Slide 23">
+          <figcaption>Slide 23</figcaption>
+        </figure>
+        <figure>
+          <img class="slide-shot" loading="lazy" src="ppt-screenshots/slide-24.png" alt="Screenshot Slide 24">
+          <figcaption>Slide 24</figcaption>
+        </figure>
+      </div>
+    </div>
+    <div class="transition-note">
+      Slide daftar pustaka ditampilkan secara visual. Tidak perlu dibaca satu per satu. Biarkan audiens membaca sendiri sambil Anda siap menerima pertanyaan.
+    </div>
+    <div class="tip">Jika dosen bertanya sumber tertentu, sebutkan: Nakamoto (2008) untuk definisi blockchain; Baliga (2020) untuk karakteristik terdesentralisasi; Efanov & Roschin (2018) untuk immutability; Farnaghi (2020) untuk transparansi; Buterin (2014) untuk smart contract; Wöhrer & Zdun (2018) untuk upgrade pattern; Zheng et al. (2017) untuk arsitektur blockchain.</div>
+  </div>
+</div>
+
+<!-- ════════════════════════════════════ -->
+<!-- SLIDE 25: TERIMA KASIH -->
+<!-- ════════════════════════════════════ -->
+<div class="slide-block">
+  <div class="slide-header">
+    <span class="sl-num">Slide 25</span>
+    <span class="sl-title">Penutup — Terima Kasih</span>
+    <span class="sl-time">⏱ 15 detik</span>
+  </div>
+  <div class="slide-body">
+    <div class="slide-preview">
+      <div class="sp-chrome">Screenshot Slide 25 — Terima Kasih</div>
+      <img class="slide-shot" loading="lazy" src="ppt-screenshots/slide-25.png" alt="Screenshot Slide 25 — Terima Kasih">
+    </div>
+    <div class="narasi">
+      <p>Demikian presentasi seminar hasil dari saya. Saya ucapkan terima kasih kepada Bapak Irman Hermadi dan Bapak Heru Sukoco selaku pembimbing, serta kepada seluruh dosen penguji atas waktu dan perhatiannya. Saya siap menerima pertanyaan dan masukan.</p>
+    </div>
+  </div>
+</div>
+
+<!-- REKAP WAKTU -->
+<div style="margin-top:40px; border:1px solid var(--border); border-radius:12px; overflow:hidden; background:white;">
+  <div style="background:var(--navy); color:white; padding:12px 20px; font-weight:700; font-size:15px;">
+    Rekap Distribusi Waktu (mengikuti urutan PPT)
+  </div>
+  <table style="width:100%; border-collapse:collapse; font-size:14px;">
+    <thead>
+      <tr style="background:#f1f5f9;">
+        <th style="padding:10px 16px; text-align:left; font-weight:700;">Bagian</th>
+        <th style="padding:10px 16px; text-align:left;">Slide PPT</th>
+        <th style="padding:10px 16px; text-align:right;">Estimasi</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr style="border-top:1px solid var(--border);">
+        <td style="padding:10px 16px; font-weight:600;">Cover</td>
+        <td style="padding:10px 16px; color:var(--gray);">Slide 1</td>
+        <td style="padding:10px 16px; text-align:right; font-weight:700;">30 detik</td>
+      </tr>
+      <tr style="border-top:1px solid var(--border); background:#f8fafc;">
+        <td style="padding:10px 16px; font-weight:600;">Pendahuluan</td>
+        <td style="padding:10px 16px; color:var(--gray);">Slide 2–9</td>
+        <td style="padding:10px 16px; text-align:right; font-weight:700;">6 menit</td>
+      </tr>
+      <tr style="border-top:1px solid var(--border);">
+        <td style="padding:10px 16px; font-weight:600;">Metode</td>
+        <td style="padding:10px 16px; color:var(--gray);">Slide 10–11</td>
+        <td style="padding:10px 16px; text-align:right; font-weight:700;">1 menit</td>
+      </tr>
+      <tr style="border-top:1px solid var(--border); background:#f8fafc;">
+        <td style="padding:10px 16px; font-weight:600;">Hasil dan Pembahasan</td>
+        <td style="padding:10px 16px; color:var(--gray);">Slide 12–18</td>
+        <td style="padding:10px 16px; text-align:right; font-weight:700;">8 menit</td>
+      </tr>
+      <tr style="border-top:1px solid var(--border);">
+        <td style="padding:10px 16px; font-weight:600;">Kesimpulan &amp; Saran</td>
+        <td style="padding:10px 16px; color:var(--gray);">Slide 19–21</td>
+        <td style="padding:10px 16px; text-align:right; font-weight:700;">2 menit</td>
+      </tr>
+      <tr style="border-top:1px solid var(--border); background:#f8fafc;">
+        <td style="padding:10px 16px; font-weight:600;">Daftar Pustaka + Penutup</td>
+        <td style="padding:10px 16px; color:var(--gray);">Slide 22–25</td>
+        <td style="padding:10px 16px; text-align:right; font-weight:700;">15 detik</td>
+      </tr>
+      <tr style="border-top:2px solid var(--navy); background:var(--navy); color:white;">
+        <td style="padding:12px 16px; font-weight:800;">TOTAL</td>
+        <td style="padding:12px 16px; opacity:.8;">25 slide</td>
+        <td style="padding:12px 16px; text-align:right; font-weight:900; font-size:16px;">~15–17 menit</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+<div style="margin-top:24px; background:#fef3c7; border:1px solid #f59e0b; border-radius:10px; padding:16px 20px; font-size:14px; color:#78350f;">
+  <strong>Catatan untuk latihan:</strong> Bicara dengan kecepatan normal (~120 kata/menit). Slide 5 (Blockchain &amp; SC dengan referensi), Slide 17 (Gas measurement), dan Slide 20 (Kesimpulan) adalah poin paling penting. Angka kunci yang harus hafal: <strong>495.962 gas</strong> (RPN) vs <strong>3.604.010 gas</strong> (Redeployment) = <strong>7,3× lebih hemat</strong>. Sisakan ~5 menit buffer untuk sesi tanya jawab.
+</div>
+
+<div style="text-align:center; margin-top:32px; font-size:12px; color:var(--gray);">
+  Hendrikus Adi Purnama G6501221008 · IPB University MKOM · Seminar Hasil 11 Mei 2026
+</div>
+
+<!-- ══════════════════════════════════════════════════════════════════ -->
+<!-- SEKSI: PERTANYAAN DARI AUDIENS LINTAS FAKULTAS -->
+<!-- ══════════════════════════════════════════════════════════════════ -->
+
+<div id="qa-sections-start" style="margin-top:60px; border-top:3px solid #0e7a4a; padding-top:32px;">
+  <h1 style="font-size:22px; border-bottom:3px solid #0e7a4a; padding-bottom:10px; margin-bottom:6px; color:#0e7a4a;">
+    🎓 Pertanyaan dari Audiens Lintas Fakultas
+  </h1>
+  <div style="font-size:13px; color:#64748b; margin-bottom:8px;">
+    Audiens seminar hasil berasal dari berbagai fakultas IPB — bukan hanya Ilmu Komputer. Persiapkan jawaban untuk pertanyaan <strong>dasar</strong> maupun <strong>teknis</strong>.
+  </div>
+  <div style="background:#f0fdf4; border:1px solid #86efac; border-radius:8px; padding:10px 16px; font-size:13px; color:#14532d; margin-bottom:28px;">
+    💡 Jawab pertanyaan dasar dengan analogi nyata, bukan istilah teknis. Jawab pertanyaan teknis dengan percaya diri tapi tetap singkat — 1–2 menit cukup.
+  </div>
+</div>
+
+<!-- ─── PERTANYAAN DASAR ─── -->
+<div style="background:#0e7a4a; color:white; border-radius:10px; padding:10px 18px; margin-bottom:16px; font-weight:700; font-size:14px;">
+  🌾 PERTANYAAN DASAR — dari Fakultas Pertanian, Ekonomi, FEMA, dll.
+</div>
+
+<div class="slide-block">
+  <div class="slide-header" style="background:#15803d">
+    <span class="sl-num">A1</span>
+    <span class="sl-title">Sebenarnya ini aplikasi sewa biasa atau ada yang beda? Bedanya di mana?</span>
+    <span class="sl-time">⭐ Paling Sering Ditanya</span>
+  </div>
+  <div class="slide-body">
+    <div class="narasi">
+      <p>Kalau dilihat dari tampilan, memang mirip aplikasi sewa biasa — ada daftar alat, ada tombol sewa, ada riwayat transaksi. Bedanya ada di bagian yang tidak kelihatan: <strong>di balik layar, setiap transaksi dicatat ke blockchain</strong>, bukan ke database milik satu pihak.</p>
+      <p>Analoginya: aplikasi sewa biasa seperti nota dari toko yang bisa diubah oleh tokonya. Sistem ini seperti akta notaris yang sudah didaftarkan — tidak bisa diubah siapa pun, dan siapa saja bisa verifikasi keasliannya kapan saja.</p>
+    </div>
+  </div>
+</div>
+
+<div class="slide-block">
+  <div class="slide-header" style="background:#15803d">
+    <span class="sl-num">A2</span>
+    <span class="sl-title">Kalau ada transaksi yang salah, bisa dibatalkan tidak?</span>
+    <span class="sl-time">⭐ Sangat Mungkin</span>
+  </div>
+  <div class="slide-body">
+    <div class="narasi">
+      <p>Ini salah satu karakteristik blockchain yang perlu dipahami: <strong>transaksi yang sudah masuk ke blockchain tidak bisa dihapus atau dibatalkan</strong>. Data bersifat permanen dan immutable.</p>
+      <p>Tapi bukan berarti tidak ada solusi jika ada kesalahan. Sistem ini punya mekanisme reject return — penyedia bisa menolak pengembalian jika kondisi alat tidak sesuai, dan ada alur konfirmasi sebelum dana diselesaikan. Jadi transaksi dirancang berlapis agar kesalahan bisa dicegah sebelum terjadi, bukan dibatalkan setelah terjadi.</p>
+    </div>
+  </div>
+</div>
+
+<div class="slide-block">
+  <div class="slide-header" style="background:#15803d">
+    <span class="sl-num">A3</span>
+    <span class="sl-title">Siapa yang pegang kendali sistem ini? Kalau adminnya curang bagaimana?</span>
+    <span class="sl-time">⭐ Sangat Mungkin</span>
+  </div>
+  <div class="slide-body">
+    <div class="narasi">
+      <p>Pertanyaan yang sangat relevan. Admin memang bisa mengubah aturan biaya — tapi ada dua pembatas yang penting. <strong>Pertama</strong>, perubahan aturan hanya berlaku untuk transaksi sewa baru, bukan yang sudah terjadi. Jadi petani yang sudah menyewa tidak bisa tiba-tiba kena tarif baru. <strong>Kedua</strong>, setiap perubahan aturan tercatat permanen di blockchain sebagai event yang bisa dilihat siapa saja — jadi kalau admin tiba-tiba ubah tarif tidak wajar, itu langsung terlihat di riwayat on-chain.</p>
+      <p>Transparansi blockchain itulah yang jadi pengawasnya — bukan kepercayaan ke orangnya.</p>
+    </div>
+  </div>
+</div>
+
+<div class="slide-block">
+  <div class="slide-header" style="background:#15803d">
+    <span class="sl-num">A4</span>
+    <span class="sl-title">Petani di desa belum tentu punya smartphone dan internet. Bagaimana solusinya?</span>
+    <span class="sl-time">Mungkin dari Fak. Pertanian / FEMA</span>
+  </div>
+  <div class="slide-body">
+    <div class="narasi">
+      <p>Ini keterbatasan yang sudah saya akui dalam penelitian. Sistem ini dirancang sebagai prototipe berbasis web yang membutuhkan browser dan MetaMask — belum dirancang untuk penggunaan offline atau tanpa smartphone.</p>
+      <p>Dalam konteks nyata, sistem ini lebih relevan untuk dioperasikan oleh <strong>operator desa atau petugas dari dinas pertanian</strong> yang sudah melek teknologi, bukan langsung oleh petani. Petani tetap bisa menikmati manfaatnya — transparansi dan ketepatan distribusi dana — tanpa harus mengoperasikan sistemnya sendiri. Pengembangan antarmuka mobile yang lebih sederhana menjadi saran penelitian lanjutan.</p>
+    </div>
+  </div>
+</div>
+
+<div class="slide-block">
+  <div class="slide-header" style="background:#b91c1c">
+    <span class="sl-num">A4b</span>
+    <span class="sl-title">Petani tidak bisa pakai MetaMask, tidak bisa top-up ETH, tidak punya wallet — sistem ini untuk siapa sebenarnya?</span>
+    <span class="sl-time">🔴 Pertanyaan Paling Kritis — Siapkan Jawaban Kuat</span>
+  </div>
+  <div class="slide-body">
+    <div style="background:#fee2e2; border-left:4px solid #dc2626; padding:10px 14px; font-size:13px; color:#7f1d1d; margin-bottom:14px; border-radius:0 6px 6px 0">
+      <strong>Ini kelemahan terbesar sistem ini.</strong> Jangan defensif — akui dengan jujur, lalu arahkan ke konteks yang benar.
+    </div>
+    <div class="narasi">
+      <p><strong>"Pertanyaan ini sangat tepat, dan saya akui ini adalah keterbatasan nyata dari prototipe ini."</strong></p>
+      <p>Anda benar — petani di lapangan, terutama petani kecil di desa, tidak bisa langsung menggunakan sistem ini sendiri. Untuk memakai MetaMask, seseorang harus bisa membuat wallet, menyimpan seed phrase dengan aman, dan tahu cara top-up ETH. Itu bukan hal yang bisa diasumsikan bisa dilakukan oleh petani yang mayoritas tingkat literasi digitalnya masih rendah.</p>
+      <p>Tapi ada tiga hal yang perlu diluruskan:</p>
+      <p><strong>Pertama — ini adalah prototipe arsitektur, bukan produk akhir.</strong> Kontribusi penelitian ini ada di lapisan teknis: membuktikan bahwa arsitektur factory-proxy dengan RPN rules engine bisa berjalan, transparan, dan efisien. Siapa yang nantinya mengoperasikannya adalah pertanyaan implementasi, bukan pertanyaan arsitektur.</p>
+      <p><strong>Kedua — model yang realistis bukan petani pakai sendiri, tapi melalui operator.</strong> Dalam program distribusi bantuan pemerintah, ada petugas lapangan dari dinas pertanian atau koperasi yang bertugas mendampingi petani. Petugas inilah yang mengoperasikan sistem — petani hanya perlu hadir, mengkonfirmasi secara verbal, dan menerima bukti transaksi. Ini mirip model BRI Link atau Pos Giro — petani tidak perlu buka aplikasi bank sendiri, ada agen yang membantu.</p>
+      <p><strong>Ketiga — masalah ETH bisa diselesaikan di layer implementasi.</strong> Di jaringan publik, biaya transaksi bisa ditanggung oleh operator atau dinas (gas sponsorship). Ada mekanisme namanya <em>meta-transaction</em> atau <em>gasless transaction</em> di mana biaya gas dibayarkan oleh pihak ketiga, bukan pengguna akhir. Petani tidak perlu punya ETH sama sekali.</p>
+      <p>Jadi keterbatasan ini nyata untuk penggunaan langsung oleh petani, tapi bukan hambatan fundamental untuk penerapan dengan model operasional yang tepat.</p>
+    </div>
+    <div class="tip">Kalau masih dikejar: "Apakah sudah ada rencana implementasi nyata?" — jawab jujur: "Ini prototipe untuk membuktikan konsep secara teknis. Implementasi dengan petani nyata membutuhkan studi kelayakan sosial tersendiri yang di luar cakupan tesis ini."</div>
+  </div>
+</div>
+
+<div class="slide-block">
+  <div class="slide-header" style="background:#15803d">
+    <span class="sl-num">A5</span>
+    <span class="sl-title">Kenapa harus pakai ETH atau cryptocurrency? Tidak bisa pakai rupiah biasa?</span>
+    <span class="sl-time">Mungkin dari Fak. Ekonomi / FEM</span>
+  </div>
+  <div class="slide-body">
+    <div class="narasi">
+      <p>Di prototipe ini, transaksi memang menggunakan ETH karena sistemnya berjalan di jaringan Ethereum — dan ETH adalah "bahan bakar" yang dibutuhkan untuk menjalankan smart contract. Tapi ini bukan hambatan fundamental.</p>
+      <p>Di implementasi nyata, ada beberapa solusi: bisa menggunakan <strong>stablecoin</strong> seperti USDT atau IDRX yang nilainya dikaitkan ke rupiah, atau menggunakan <strong>Layer 2 blockchain</strong> dengan biaya sangat murah. Yang terpenting dari penelitian ini bukan mata uangnya, tapi <strong>arsitekturnya</strong> — bagaimana smart contract bisa mengeksekusi aturan secara otomatis dan transparan.</p>
+    </div>
+  </div>
+</div>
+
+<div class="slide-block">
+  <div class="slide-header" style="background:#15803d">
+    <span class="sl-num">A6</span>
+    <span class="sl-title">Apa manfaat nyata penelitian ini untuk petani Indonesia?</span>
+    <span class="sl-time">Hampir Pasti Ditanya</span>
+  </div>
+  <div class="slide-body">
+    <div class="narasi">
+      <p>Manfaat langsungnya ada tiga. <strong>Satu</strong>, petani bisa tahu persis berapa biaya yang akan dikenakan sebelum menyewa — karena aturan biaya tercatat on-chain dan bisa dilihat siapa saja, tidak ada biaya tersembunyi atau perubahan mendadak. <strong>Dua</strong>, jika ada program subsidi dari pemerintah, distribusinya bisa diaudit secara transparan — siapa yang dapat, berapa, kapan — tanpa bisa dimanipulasi. <strong>Tiga</strong>, riwayat sewa yang permanen bisa menjadi modal rekam jejak untuk akses kredit atau program bantuan berikutnya.</p>
+    </div>
+  </div>
+</div>
+
+<!-- ─── PERTANYAAN TEKNIS ─── -->
+<div style="background:#1e3a8a; color:white; border-radius:10px; padding:10px 18px; margin:28px 0 16px 0; font-weight:700; font-size:14px;">
+  💻 PERTANYAAN TEKNIS — dari Ilmu Komputer, FMIPA, atau audiens teknis lain
+</div>
+
+<div class="slide-block">
+  <div class="slide-header" style="background:#1e40af">
+    <span class="sl-num">B1</span>
+    <span class="sl-title">Kenapa pakai RPN? Kenapa tidak simpan formula sebagai string teks saja?</span>
+    <span class="sl-time">⭐ Sangat Mungkin dari Audiens CS</span>
+  </div>
+  <div class="slide-body">
+    <div class="narasi">
+      <p>Smart contract tidak punya parser teks bawaan — mengurai string formula di dalam EVM sangat mahal gas-nya dan rawan bug. RPN dipilih karena operasinya berbasis stack yang sederhana: baca opcode satu per satu, push atau pop nilai, selesai. Tidak perlu parser, tidak perlu rekursi, tidak perlu operator precedence — kontrak tinggal iterasi array opcode dari kiri ke kanan.</p>
+      <p>Hasilnya deterministik dan dapat diaudit — siapa saja bisa baca array opcode di blockchain dan hitung ulang hasilnya secara manual.</p>
+    </div>
+  </div>
+</div>
+
+<div class="slide-block">
+  <div class="slide-header" style="background:#1e40af">
+    <span class="sl-num">B2</span>
+    <span class="sl-title">Apa bedanya proxy EIP-1967 dengan proxy biasa? Kenapa tidak pakai EIP-1822?</span>
+    <span class="sl-time">Mungkin dari Audiens CS</span>
+  </div>
+  <div class="slide-body">
+    <div class="narasi">
+      <p>EIP-1967 adalah standar yang menetapkan di slot penyimpanan mana alamat implementasi disimpan di dalam proxy. Dengan slot yang sudah distandardisasi, tools seperti Etherscan bisa otomatis mendeteksi bahwa sebuah kontrak adalah proxy — tanpa perlu konfigurasi manual. EIP-1822 (UUPS) adalah varian di mana logika upgrade ada di implementasi, bukan di proxy. EIP-1967 dipilih karena lebih mature, lebih banyak digunakan di ekosistem OpenZeppelin, dan lebih mudah diverifikasi oleh tools eksternal.</p>
+    </div>
+  </div>
+</div>
+
+<div class="slide-block">
+  <div class="slide-header" style="background:#1e40af">
+    <span class="sl-num">B3</span>
+    <span class="sl-title">Apakah rules engine RPN ini aman? Bisa tidak dieksploitasi untuk manipulasi kalkulasi?</span>
+    <span class="sl-time">⭐ Mungkin dari Audiens CS</span>
+  </div>
+  <div class="slide-body">
+    <div class="narasi">
+      <p>Rules engine ini hanya bisa diubah oleh admin yang sudah terverifikasi melalui mekanisme ECDSA signature. Opcode yang tersedia juga terbatas — hanya opcode 1–20 yang sudah didefinisikan, tidak ada opcode untuk akses storage sembarangan atau call ke kontrak lain. Jadi attack surface-nya kecil.</p>
+      <p>Yang perlu dicatat: kepercayaan di sini bukan pada kontraknya, tapi pada <strong>transparansinya</strong>. Kalau admin memasang aturan yang tidak wajar, siapa saja bisa membaca opcode-nya langsung dari blockchain dan memverifikasi apakah aturan itu masuk akal.</p>
+    </div>
+  </div>
+</div>
+
+<div class="slide-block">
+  <div class="slide-header" style="background:#1e40af">
+    <span class="sl-num">B4</span>
+    <span class="sl-title">Kenapa pakai MongoDB? Kenapa tidak PostgreSQL atau database relasional?</span>
+    <span class="sl-time">Mungkin dari Audiens CS</span>
+  </div>
+  <div class="slide-body">
+    <div class="narasi">
+      <p>MongoDB dipilih karena data dari blockchain berbentuk event dan struct yang skemanya bisa berubah — misalnya field RPN rules bisa memiliki jumlah opcode yang berbeda-beda. Document-based storage lebih fleksibel untuk menyimpan struktur seperti ini tanpa perlu migrasi skema. Selain itu, karena MongoDB bukan sumber kebenaran utama (hanya cache), konsistensi ACID tidak menjadi prioritas utama — yang penting fast read untuk UI.</p>
+    </div>
+  </div>
+</div>
+
+<div class="slide-block">
+  <div class="slide-header" style="background:#1e40af">
+    <span class="sl-num">B5</span>
+    <span class="sl-title">Gas diukur di Hardhat lokal — apakah hasilnya valid untuk dibandingkan?</span>
+    <span class="sl-time">⭐ Sangat Mungkin</span>
+  </div>
+  <div class="slide-body">
+    <div class="narasi">
+      <p>Nilai gas di Hardhat valid untuk perbandingan <em>relatif</em> karena semua fungsi diukur dalam kondisi yang sama — EVM version, compiler settings, dan input yang identik. Yang tidak bisa diukur di Hardhat adalah biaya aktual dalam rupiah/ETH, karena itu bergantung pada gas price di jaringan publik yang fluktuatif.</p>
+      <p>Jadi kesimpulan "7,3 kali lebih hemat" tetap valid karena itu perbandingan gas unit, bukan perbandingan biaya dalam mata uang. Pengujian di testnet publik untuk mendapatkan data biaya aktual menjadi saran penelitian lanjutan.</p>
+    </div>
+  </div>
+</div>
+
+<div class="slide-block">
+  <div class="slide-header" style="background:#1e40af">
+    <span class="sl-num">B6</span>
+    <span class="sl-title">Bagaimana sinkronisasi antara data on-chain dan MongoDB kalau ada transaksi yang gagal di tengah jalan?</span>
+    <span class="sl-time">Mungkin dari Audiens CS</span>
+  </div>
+  <div class="slide-body">
+    <div class="narasi">
+      <p>Sistem menggunakan pola <strong>prepare-commit dua tahap</strong>. Backend menyiapkan parameter transaksi dan menyimpan status "pending" di MongoDB terlebih dahulu. Lalu frontend mengirim transaksi ke MetaMask. Setelah transaksi dikonfirmasi di blockchain, frontend mengirim txHash ke backend, dan backend memperbarui status MongoDB berdasarkan data on-chain yang sudah final.</p>
+      <p>Jika transaksi gagal di blockchain (misalnya reverting), status MongoDB tetap "pending" dan admin bisa melihat inkonsistensi ini. Karena MongoDB hanya cache, sumber kebenaran tetap on-chain — data yang ada di MongoDB bisa selalu direkonstruksi ulang dari event blockchain jika diperlukan.</p>
+    </div>
+  </div>
+</div>
+
+<!-- ══════════════════════════════════════════════════════════════════ -->
+<!-- SEKSI: ANTISIPASI PERTANYAAN DOSEN PENGUJI -->
+<!-- ══════════════════════════════════════════════════════════════════ -->
+
+<div style="margin-top:60px; border-top:3px solid var(--navy); padding-top:32px;">
+  <h1 style="font-size:22px; border-bottom:3px solid var(--orange); padding-bottom:10px; margin-bottom:6px; color:#92400e;">
+    ❓ Antisipasi Pertanyaan Dosen Penguji
+  </h1>
+  <div style="font-size:13px; color:var(--gray); margin-bottom:28px;">
+    Pertanyaan yang kemungkinan besar muncul saat sesi tanya jawab — lengkap dengan jawaban yang siap diucapkan.
+  </div>
+</div>
+
+<!-- KATEGORI 1: FUNDAMENTAL BLOCKCHAIN -->
+<div style="background:var(--navy); color:white; border-radius:10px; padding:10px 18px; margin-bottom:16px; font-weight:700; font-size:14px; letter-spacing:.05em;">
+  🔷 KATEGORI 1 — Fundamental Blockchain &amp; Pilihan Teknologi
+</div>
+
+<!-- Q1 -->
+<div class="slide-block">
+  <div class="slide-header" style="background:#1e40af">
+    <span class="sl-num">Q1</span>
+    <span class="sl-title">Kenapa harus pakai blockchain? Database biasa kan lebih murah dan lebih mudah?</span>
+    <span class="sl-time">⭐ Sangat Mungkin Keluar</span>
+  </div>
+  <div class="slide-body">
+    <div style="background:#fef3c7; border-left:4px solid #f59e0b; padding:10px 14px; font-size:13px; color:#78350f; margin-bottom:14px; border-radius:0 6px 6px 0">
+      <strong>Pertanyaan ini PASTI keluar.</strong> Jawab dengan tenang dan terstruktur.
+    </div>
+    <div class="narasi">
+      <p><strong>"Pertanyaan yang sangat bagus, Pak/Bu."</strong></p>
+      <p>Betul bahwa database konvensional lebih murah dan lebih mudah dibangun. Tapi ada satu masalah fundamental yang tidak bisa diselesaikan database biasa: <strong>kepercayaan.</strong></p>
+      <p>Di database biasa, siapa pun yang memegang akses admin bisa mengubah catatan tanpa bisa dideteksi — dan itulah persis masalah yang terjadi di sistem sewa alat pertanian konvensional. Petani tidak punya cara untuk membuktikan kalau aturan biaya diubah sepihak setelah transaksi terjadi.</p>
+      <p>Blockchain menyelesaikan ini bukan dengan kecanggihan teknologinya, tapi dengan satu properti sederhana: <strong>data yang sudah masuk tidak bisa diubah oleh siapa pun</strong> — termasuk admin sistem sendiri. Ini yang membuat transaksi bisa dipercaya tanpa harus percaya pada satu pihak tertentu.</p>
+      <p>Jadi pilihannya bukan "blockchain vs database" — tapi "sistem yang bisa dipercaya secara teknis vs sistem yang harus dipercaya secara sosial." Untuk konteks sewa alat pertanian yang sering kali melibatkan pihak-pihak yang belum saling kenal, sifat trustless dari blockchain sangat relevan.</p>
+    </div>
+  </div>
+</div>
+
+<!-- Q2 -->
+<div class="slide-block">
+  <div class="slide-header" style="background:#1e40af">
+    <span class="sl-num">Q2</span>
+    <span class="sl-title">Kenapa pakai Hardhat/Ethereum? Kenapa tidak pakai blockchain yang lebih murah atau lebih cocok untuk pertanian?</span>
+    <span class="sl-time">⭐ Cukup Mungkin Keluar</span>
+  </div>
+  <div class="slide-body">
+    <div class="narasi">
+      <p>Hardhat dipilih sebagai lingkungan pengembangan lokal karena beberapa alasan praktis: ekosistem tools-nya paling matang, dukungan Solidity dan Ethers.js paling lengkap, dan sangat umum digunakan dalam penelitian smart contract akademis sehingga reprodusibilitas hasil penelitian lebih mudah.</p>
+      <p>Untuk konteks jaringan publik, Ethereum Layer 1 memang relatif mahal. Tapi arsitektur yang dibangun di penelitian ini — terutama fakta bahwa kontrak dapat di-upgrade tanpa ganti alamat — justru membuat sistem ini sangat kompatibel dengan <strong>Layer 2 seperti Polygon atau Arbitrum</strong>, di mana biaya gas bisa 10 hingga 100 kali lebih murah. Ini sudah saya sebutkan di bagian saran sebagai arah pengembangan berikutnya.</p>
+      <p>Sehingga Hardhat di sini bukan pilihan final untuk produksi — ini adalah lingkungan validasi yang terkontrol untuk mengukur dan membuktikan konsep sebelum masuk ke jaringan publik.</p>
+    </div>
+  </div>
+</div>
+
+<!-- KATEGORI 2: GAS & EFISIENSI -->
+<div style="background:#0e7a4a; color:white; border-radius:10px; padding:10px 18px; margin-bottom:16px; margin-top:28px; font-weight:700; font-size:14px; letter-spacing:.05em;">
+  🔷 KATEGORI 2 — Pengukuran Gas &amp; Klaim Efisiensi 7,3×
+</div>
+
+<!-- Q3 -->
+<div class="slide-block">
+  <div class="slide-header" style="background:#166534">
+    <span class="sl-num">Q3</span>
+    <span class="sl-title">Bagaimana cara Anda mengukur gas? Apakah perbandingannya adil — "apples to apples"?</span>
+    <span class="sl-time">⭐⭐ Sangat Mungkin Keluar</span>
+  </div>
+  <div class="slide-body">
+    <div style="background:#dcfce7; border-left:4px solid #16a34a; padding:10px 14px; font-size:13px; color:#14532d; margin-bottom:14px; border-radius:0 6px 6px 0">
+      <strong>Angka 7,3× adalah klaim empiris — dosen PASTI memverifikasi caranya.</strong>
+    </div>
+    <div class="narasi">
+      <p>Pengukuran gas dilakukan menggunakan fitur bawaan Hardhat yang melaporkan gas per transaksi secara deterministik. Saya menjalankan dua skenario:</p>
+      <p><strong>Skenario A — RPN setRules():</strong> memanggil fungsi <code>setRules()</code> dengan bytecode aturan baru di kontrak yang sudah di-deploy. Gas yang dikonsumsi: <strong>495.962 unit</strong>.</p>
+      <p><strong>Skenario B — Redeployment Penuh:</strong> men-deploy ulang kontrak <code>ServiceCategoryV2</code> beserta dependensinya dari awal dengan bytecode baru. Gas yang dikonsumsi: <strong>3.604.010 unit</strong>.</p>
+      <p>Keduanya menghasilkan output fungsional yang sama: aturan biaya baru berlaku untuk transaksi sewa berikutnya. Jadi perbandingannya memang adil — keduanya mengevaluasi biaya untuk mencapai tujuan yang sama: <em>memperbarui aturan biaya</em>.</p>
+      <p>Rasio 3.604.010 ÷ 495.962 = <strong>7,27 ≈ 7,3 kali</strong>. Bukan estimasi, ini hasil pengukuran langsung dari eksekusi nyata di Hardhat.</p>
+    </div>
+  </div>
+</div>
+
+<!-- Q4 -->
+<div class="slide-block">
+  <div class="slide-header" style="background:#166534">
+    <span class="sl-num">Q4</span>
+    <span class="sl-title">Gas 495.000 itu mahal atau murah dalam angka rupiah? Apa artinya bagi petani?</span>
+    <span class="sl-time">⭐ Cukup Mungkin Keluar</span>
+  </div>
+  <div class="slide-body">
+    <div class="narasi">
+      <p>Gas adalah satuan komputasi — bukan angka rupiah langsung. Untuk mengkonversinya ke biaya nyata, dibutuhkan dua variabel: harga gas (gas price dalam gwei) dan harga ETH di pasar.</p>
+      <p>Sebagai ilustrasi dengan asumsi gas price 20 gwei dan ETH = Rp 50 juta:<br>
+      <strong>RPN setRules():</strong> 495.962 × 20 gwei × Rp 50 juta/ETH ≈ <strong>Rp 495 ribu per pembaruan aturan.</strong><br>
+      <strong>Redeployment:</strong> ≈ Rp 3,6 juta per perubahan kebijakan.</p>
+      <p>Penting untuk dicatat: ini biaya untuk <em>admin memperbarui aturan</em>, <strong>bukan biaya yang ditanggung petani</strong>. Petani hanya membayar biaya sewa dan gas untuk transaksi sewa mereka sendiri — yang jauh lebih kecil.</p>
+      <p>Dan kalau di-deploy ke Layer 2 seperti Polygon: biayanya bisa 10–100× lebih murah, sehingga biaya update aturan bisa kurang dari Rp 5.000. Ini yang membuat sistem ini sangat feasible untuk skala produksi.</p>
+    </div>
+  </div>
+</div>
+
+<!-- KATEGORI 3: RPN & TEKNIKAL -->
+<div style="background:#d97706; color:white; border-radius:10px; padding:10px 18px; margin-bottom:16px; margin-top:28px; font-weight:700; font-size:14px; letter-spacing:.05em;">
+  🔷 KATEGORI 3 — RPN Rules Engine &amp; Implementasi Teknis
+</div>
+
+<!-- Q5 -->
+<div class="slide-block">
+  <div class="slide-header" style="background:#b45309">
+    <span class="sl-num">Q5</span>
+    <span class="sl-title">Apa batasan dari RPN rules engine ini? Kasus apa yang tidak bisa ditangani?</span>
+    <span class="sl-time">⭐ Cukup Mungkin Keluar</span>
+  </div>
+  <div class="slide-body">
+    <div class="narasi">
+      <p>RPN rules engine dalam penelitian ini mendukung delapan opcode — operasi aritmatika dasar dan persentase. Ini cukup untuk kasus tarif linier seperti "10% dari harga alat" atau "Rp 50.000 per hari + fee admin".</p>
+      <p><strong>Yang belum didukung:</strong> logika kondisional (if-then-else), perbandingan nilai (lebih besar/kecil dari), loop iterasi, dan tipe data non-numerik. Sehingga aturan seperti "jika durasi lebih dari 7 hari, diskon 5%" belum bisa direpresentasikan dengan engine saat ini.</p>
+      <p>Ini adalah keterbatasan yang saya sadari dan sudah dimasukkan sebagai saran penelitian — yaitu <strong>perluasan kemampuan rules engine dengan opcode kondisional</strong>. Namun untuk kebutuhan dasar sewa alat pertanian, engine yang ada sudah cukup memadai.</p>
+    </div>
+  </div>
+</div>
+
+<!-- Q6 -->
+<div class="slide-block">
+  <div class="slide-header" style="background:#b45309">
+    <span class="sl-num">Q6</span>
+    <span class="sl-title">Saat upgrade dari V1 ke V2 — bagaimana memastikan data lama tidak rusak atau hilang? Apa yang terjadi dengan storage layout?</span>
+    <span class="sl-time">⭐⭐ Sangat Mungkin Keluar (teknis)</span>
+  </div>
+  <div class="slide-body">
+    <div style="background:#fef3c7; border-left:4px solid #f59e0b; padding:10px 14px; font-size:13px; color:#78350f; margin-bottom:14px; border-radius:0 6px 6px 0">
+      <strong>Pertanyaan teknis paling dalam — perlu dijawab dengan percaya diri.</strong>
+    </div>
+    <div class="narasi">
+      <p>Ini adalah risiko utama dalam upgradeable smart contract dan saya menanganinya secara eksplisit. Pola proxy EIP-1967 memisahkan storage dari logic: <strong>data (state) disimpan di kontrak Proxy</strong>, sementara <strong>logika bisnis ada di kontrak Implementasi</strong>.</p>
+      <p>Ketika V1 di-upgrade ke V2, yang diganti hanya alamat implementasi yang ditunjuk oleh Proxy — storage Proxy tidak disentuh sama sekali. Data sewa yang sudah ada tetap ada di slot storage yang sama.</p>
+      <p>Yang kritis adalah: <strong>V2 wajib mempertahankan storage layout yang identik dengan V1</strong> — variabel state harus dideklarasikan dalam urutan dan tipe yang sama persis. Penambahan variabel baru hanya boleh di bawah variabel yang sudah ada, tidak boleh menyisipkan di tengah. Saya memvalidasi ini sebelum upgrade dilakukan — dan terbukti: setelah upgrade ke V2, seluruh data sewa V1 masih terbaca dengan benar.</p>
+    </div>
+  </div>
+</div>
+
+<!-- Q7 -->
+<div class="slide-block">
+  <div class="slide-header" style="background:#b45309">
+    <span class="sl-num">Q7</span>
+    <span class="sl-title">Kenapa pakai RPN? Kenapa tidak pakai representasi aturan yang lebih mudah dibaca manusia, seperti JSON atau DSL?</span>
+    <span class="sl-time">⭐ Cukup Mungkin Keluar</span>
+  </div>
+  <div class="slide-body">
+    <div class="narasi">
+      <p>RPN dipilih bukan karena mudah dibaca manusia — memang tidak. RPN dipilih karena <strong>sangat efisien untuk dieksekusi di dalam smart contract</strong>.</p>
+      <p>Di dalam Solidity (bahasa smart contract), evaluasi ekspresi harus dilakukan dengan stack sederhana tanpa rekursi. RPN secara alami cocok untuk ini: operasi cukup dilakukan kiri ke kanan, setiap opcode langsung dieksekusi dengan pop/push dari stack — tidak butuh parser yang kompleks, tidak butuh rekursi.</p>
+      <p>JSON atau DSL yang lebih human-readable membutuhkan parser yang jauh lebih kompleks di dalam smart contract — ini akan mengonsumsi gas yang sangat besar dan berisiko memiliki bug di parser-nya sendiri.</p>
+      <p>Untuk kemudahan admin: di lapisan frontend (React), admin tidak perlu menulis bytecode RPN secara manual — antarmuka visual yang mengkonversi ke bytecode RPN di belakang layar. Jadi human-readability diselesaikan di layer frontend, bukan di layer smart contract.</p>
+    </div>
+  </div>
+</div>
+
+<!-- KATEGORI 4: KEAMANAN & TRUST -->
+<div style="background:#c0392b; color:white; border-radius:10px; padding:10px 18px; margin-bottom:16px; margin-top:28px; font-weight:700; font-size:14px; letter-spacing:.05em;">
+  🔷 KATEGORI 4 — Keamanan &amp; Aspek Trust
+</div>
+
+<!-- Q8 -->
+<div class="slide-block">
+  <div class="slide-header" style="background:#991b1b">
+    <span class="sl-num">Q8</span>
+    <span class="sl-title">Kalau kunci private admin bocor atau admin berkolusi — sistem ini masih aman? Bukankah ini sentralisasi baru?</span>
+    <span class="sl-time">⭐⭐ Sangat Mungkin Keluar</span>
+  </div>
+  <div class="slide-body">
+    <div class="narasi">
+      <p>Pertanyaan ini sangat tepat dan ini adalah keterbatasan nyata yang saya akui. Sistem ini memang masih memiliki satu titik kegagalan: <strong>private key admin</strong>. Jika bocor, admin palsu bisa mengubah aturan biaya atau bahkan mengupgrade kontrak ke implementasi berbahaya.</p>
+      <p>Namun ada dua poin penting:</p>
+      <p><strong>Pertama,</strong> meskipun aturan bisa diubah admin, <strong>semua perubahan tersimpan permanen sebagai event on-chain</strong>. Tidak ada perubahan tersembunyi — siapa pun bisa melihat kapan aturan diubah, menjadi apa, dan oleh alamat mana. Ini berbeda jauh dari sistem konvensional di mana admin bisa mengubah data diam-diam tanpa jejak.</p>
+      <p><strong>Kedua,</strong> solusi untuk masalah ini sudah saya identifikasi sebagai saran penelitian: <strong>tata kelola terdesentralisasi berbasis voting on-chain</strong>. Dengan mekanisme ini, perubahan aturan butuh persetujuan mayoritas voter — bukan satu admin tunggal. Ini adalah arah yang logis untuk penelitian lanjutan.</p>
+      <p>Jadi ini bukan kegagalan desain, tapi batasan scope yang disadari dan sudah ada peta jalannya.</p>
+    </div>
+  </div>
+</div>
+
+<!-- Q9 -->
+<div class="slide-block">
+  <div class="slide-header" style="background:#991b1b">
+    <span class="sl-num">Q9</span>
+    <span class="sl-title">Apakah smart contract ini sudah diaudit keamanannya? Bagaimana kalau ada bug di kontrak?</span>
+    <span class="sl-time">⭐ Cukup Mungkin Keluar</span>
+  </div>
+  <div class="slide-body">
+    <div class="narasi">
+      <p>Belum dilakukan audit keamanan formal oleh pihak ketiga — dan ini saya akui sebagai keterbatasan penelitian. Pengujian yang dilakukan adalah pengujian fungsional: memverifikasi bahwa sistem bekerja sesuai spesifikasi, termasuk alur sewa, pengembalian, distribusi dana, dan perbandingan gas.</p>
+      <p>Untuk kontrak yang akan diproduksi, audit formal oleh firma seperti OpenZeppelin atau Trail of Bits tentu sangat diperlukan. Ini juga mengapa saran pertama di penelitian ini adalah <strong>verifikasi keamanan formal</strong> — membuktikan kebenaran logika kontrak secara matematis, bukan hanya melalui uji fungsional.</p>
+      <p>Penggunaan OpenZeppelin ECDSA library untuk signature verification memberikan lapisan keamanan baseline, tapi itu bukan pengganti audit komprehensif.</p>
+    </div>
+  </div>
+</div>
+
+<!-- KATEGORI 5: METODE & KONTRIBUSI -->
+<div style="background:#4c1d95; color:white; border-radius:10px; padding:10px 18px; margin-bottom:16px; margin-top:28px; font-weight:700; font-size:14px; letter-spacing:.05em;">
+  🔷 KATEGORI 5 — Metode Penelitian &amp; Kontribusi Ilmiah
+</div>
+
+<!-- Q10 -->
+<div class="slide-block">
+  <div class="slide-header" style="background:#5b21b6">
+    <span class="sl-num">Q10</span>
+    <span class="sl-title">Apa novelty (kebaruan) dari penelitian ini? Bedanya dengan penelitian blockchain pertanian yang sudah ada apa?</span>
+    <span class="sl-time">⭐⭐ Sangat Mungkin Keluar</span>
+  </div>
+  <div class="slide-body">
+    <div style="background:#ede9fe; border-left:4px solid #7c3aed; padding:10px 14px; font-size:13px; color:#4c1d95; margin-bottom:14px; border-radius:0 6px 6px 0">
+      <strong>Pertanyaan kontribusi ilmiah — jawab dengan percaya diri dan spesifik.</strong>
+    </div>
+    <div class="narasi">
+      <p>Penelitian blockchain di sektor pertanian sebelumnya — seperti AgriDigital atau studi oleh Abbas (2023) — umumnya berfokus pada <em>pelacakan rantai pasok</em> atau <em>pembayaran terdesentralisasi</em>. Kontraknya bersifat statis: sekali deploy, aturan tidak bisa berubah.</p>
+      <p>Kebaruan penelitian ini ada pada <strong>dua hal yang dikombinasikan</strong>:</p>
+      <p><strong>Pertama</strong>, penerapan pola factory-proxy EIP-1967 pada sistem layanan sewa — bukan hanya payment atau tracking. Ini memungkinkan <em>perubahan logika bisnis</em> (aturan biaya, kebijakan sewa) tanpa mengganggu riwayat transaksi yang sudah ada.</p>
+      <p><strong>Kedua</strong>, embedding rules engine berbasis RPN langsung di dalam smart contract — sehingga aturan biaya bukan hanya "bisa diubah" tapi juga <em>tercatat permanen setiap versinya</em> dan setiap transaksi historis tetap bisa diaudit dengan aturan yang berlaku saat itu.</p>
+      <p>Kombinasi ini — upgradeable contract + dynamic rules engine yang teraudit — belum saya temukan pada penelitian sejenis di konteks layanan sewa alat pertanian.</p>
+    </div>
+  </div>
+</div>
+
+<!-- Q11 -->
+<div class="slide-block">
+  <div class="slide-header" style="background:#5b21b6">
+    <span class="sl-num">Q11</span>
+    <span class="sl-title">Kenapa metode prototyping dipilih? Kenapa bukan metode lain seperti design science research atau agile?</span>
+    <span class="sl-time">⭐ Kadang Keluar</span>
+  </div>
+  <div class="slide-body">
+    <div class="narasi">
+      <p>Prototyping dipilih karena karakteristik unik pengembangan smart contract: <strong>kontrak yang sudah di-deploy sangat sulit diubah</strong>. Ini berbeda dengan pengembangan software konvensional di mana bug bisa dipatch kapan saja.</p>
+      <p>Dengan prototyping, setiap lapisan divalidasi sebelum lapisan berikutnya dibangun: logika kontrak divalidasi sebelum backend dibangun, backend divalidasi sebelum frontend dihubungkan. Jika ada kesalahan desain fundamental, ditemukan lebih awal sebelum terlanjur ke lapisan yang lebih mahal untuk diperbaiki.</p>
+      <p>Design science research juga relevan, tapi lebih cocok untuk penelitian yang berfokus pada produksi artefak yang akan dievaluasi secara formal. Penelitian ini lebih bersifat eksplorasi dan validasi konsep — di mana iterasi cepat lebih penting daripada formalisasi metodologis yang ketat di setiap tahap.</p>
+    </div>
+  </div>
+</div>
+
+<!-- KATEGORI 6: PRAKTIS & LAPANGAN -->
+<div style="background:#0369a1; color:white; border-radius:10px; padding:10px 18px; margin-bottom:16px; margin-top:28px; font-weight:700; font-size:14px; letter-spacing:.05em;">
+  🔷 KATEGORI 6 — Aspek Praktis &amp; Penggunaan di Lapangan
+</div>
+
+<!-- Q12 -->
+<div class="slide-block">
+  <div class="slide-header" style="background:#075985">
+    <span class="sl-num">Q12</span>
+    <span class="sl-title">Apakah petani di Indonesia bisa menggunakan sistem ini? Mereka perlu paham MetaMask dan cryptocurrency?</span>
+    <span class="sl-time">⭐ Cukup Mungkin Keluar</span>
+  </div>
+  <div class="slide-body">
+    <div class="narasi">
+      <p>Ini adalah tantangan adopsi yang nyata dan saya tidak menyembunyikannya. Dalam prototipe saat ini, petani memang perlu berinteraksi dengan MetaMask — sebuah browser wallet yang memerlukan pemahaman dasar tentang wallet dan transaksi blockchain.</p>
+      <p>Namun ini bukan hambatan permanen. Di dunia nyata, ada beberapa pendekatan yang sudah lazim digunakan untuk menyembunyikan kompleksitas blockchain dari pengguna akhir: <strong>account abstraction</strong> (pengguna tidak perlu tahu tentang private key), <strong>gasless transactions</strong> (biaya gas ditanggung penyedia layanan), atau <strong>custodial wallet yang terintegrasi dengan SMS/OTP</strong>.</p>
+      <p>Dalam konteks penelitian ini, fokusnya adalah membuktikan bahwa <em>mekanisme teknis di lapisan smart contract bekerja</em> — bahwa transparansi, upgradeability, dan efisiensi gas terbukti. Aspek UX untuk petani adalah lapisan yang bisa ditambahkan di atas, dan itu adalah arah pengembangan berikutnya.</p>
+    </div>
+  </div>
+</div>
+
+<!-- Q13 -->
+<div class="slide-block">
+  <div class="slide-header" style="background:#075985">
+    <span class="sl-num">Q13</span>
+    <span class="sl-title">Penelitian ini hanya diuji di Hardhat lokal — bagaimana kita tahu sistem ini akan berhasil di kondisi nyata dengan banyak user concurrent?</span>
+    <span class="sl-time">⭐ Kadang Keluar</span>
+  </div>
+  <div class="slide-body">
+    <div class="narasi">
+      <p>Saya akui ini adalah batasan scope penelitian. Pengujian di Hardhat lokal dirancang untuk memvalidasi <em>kebenaran logika</em> dan <em>efisiensi komputasi</em> — bukan untuk mengukur throughput atau skalabilitas under load.</p>
+      <p>Namun ada beberapa hal yang perlu dicatat: <strong>pertama</strong>, smart contract berjalan deterministik — perilakunya di Hardhat dan di Ethereum mainnet adalah identik untuk input yang sama. Yang berubah adalah biaya gas dan waktu konfirmasi, bukan kebenaran logika.</p>
+      <p><strong>Kedua</strong>, blockchain Ethereum sendiri yang menangani concurrency melalui mekanisme nonce dan antrian transaksi — bukan smart contract-nya. Jadi "banyak user concurrent" tidak menyebabkan race condition di level kontrak selama mekanisme nonce diimplementasikan dengan benar — dan itu sudah ada di sistem ini melalui anti-replay nonce per admin.</p>
+      <p>Uji kelayakan di jaringan publik dengan beban nyata adalah saran yang sudah saya masukkan sebagai langkah penelitian selanjutnya.</p>
+    </div>
+  </div>
+</div>
+
+<!-- KATEGORI 7: KONSEP TEKNIS BLOCKCHAIN (PERTANYAAN AWAM TAPI TAJAM) -->
+<div style="background:#0f172a; color:white; border-radius:10px; padding:10px 18px; margin-bottom:16px; margin-top:28px; font-weight:700; font-size:14px; letter-spacing:.05em;">
+  🔷 KATEGORI 7 — Konsep Teknis Blockchain yang Sering Disalahpahami
+</div>
+
+<!-- Q14 -->
+<div class="slide-block">
+  <div class="slide-header" style="background:#1e3a5f">
+    <span class="sl-num">Q14</span>
+    <span class="sl-title">Kenapa pakai Ethereum kalau gas-nya mahal? Itu bukan malah jadi beban buat petani?</span>
+    <span class="sl-time">⭐⭐ Sangat Mungkin Keluar</span>
+  </div>
+  <div class="slide-body">
+    <div style="background:#dbeafe; border-left:4px solid #3b82f6; padding:10px 14px; font-size:13px; color:#1e40af; margin-bottom:14px; border-radius:0 6px 6px 0">
+      <strong>Kuncinya:</strong> penelitian ini berjalan di Hardhat <em>lokal</em> — tidak ada biaya ETH sungguhan sama sekali.
+    </div>
+    <div class="narasi">
+      <p>Ada dua hal yang perlu dibedakan di sini: <strong>gas sebagai satuan ukuran</strong> dan <strong>biaya rupiah sungguhan</strong>.</p>
+      <p>Di penelitian ini, semua transaksi berjalan di <strong>Hardhat lokal</strong> — yaitu simulator blockchain yang berjalan di komputer peneliti sendiri. Tidak ada uang yang keluar, tidak ada transaksi ke jaringan publik, tidak ada biaya ETH sungguhan. Gas yang saya laporkan — 495.962 unit — adalah <em>satuan komputasi</em>, bukan tagihan rupiah.</p>
+      <p>Lalu kenapa tetap pakai ekosistem Ethereum? Karena Solidity dan EIP-1967 yang jadi fondasi pola proxy penelitian ini lahir dan paling matang di ekosistem Ethereum. Dokumentasinya terlengkap, tools-nya paling stabil, dan reprodusibilitas hasil penelitian paling mudah diverifikasi oleh peneliti lain.</p>
+      <p>Kalau nanti mau diproduksi dan gas mainnet dianggap terlalu mahal, solusinya sudah ada: deploy ke <strong>Layer 2 seperti Polygon atau Arbitrum</strong> — ekosistem yang sama, smart contract yang sama, tapi biaya transaksi 10 hingga 100 kali lebih murah. Petani tidak menanggung biaya gas pembaruan aturan — itu beban admin. Petani hanya membayar biaya sewa dan gas transaksi sewa mereka sendiri yang jauh lebih kecil.</p>
+    </div>
+  </div>
+</div>
+
+<!-- Q15 -->
+<div class="slide-block">
+  <div class="slide-header" style="background:#1e3a5f">
+    <span class="sl-num">Q15</span>
+    <span class="sl-title">Maksudnya "komputasi di semua komputer" itu gimana? Memang semua komputer harus ikut menghitung setiap transaksi?</span>
+    <span class="sl-time">⭐⭐ Sangat Mungkin Keluar — dosen non-teknis</span>
+  </div>
+  <div class="slide-body">
+    <div style="background:#fef3c7; border-left:4px solid #f59e0b; padding:10px 14px; font-size:13px; color:#78350f; margin-bottom:14px; border-radius:0 6px 6px 0">
+      <strong>Pertanyaan konseptual yang sering muncul dari dosen yang tidak berlatar belakang blockchain.</strong> Jawab dengan analogi dulu, baru teknis.
+    </div>
+    <div class="narasi">
+      <p>Betul — dan itu memang disengaja. Mari saya jelaskan dengan analogi dulu.</p>
+      <p>Bayangkan sidang mahkamah dengan 1.000 hakim. Setiap hakim membaca berkas perkara yang sama dan memberikan keputusan yang sama. Hasilnya bukan satu hakim yang memutuskan — tapi konsensus dari 1.000 hakim. Tidak ada satu pun yang bisa memalsukan keputusan karena 999 hakim lainnya akan langsung menolak.</p>
+      <p>Begitu cara kerja blockchain: di jaringan publik Ethereum, ada ribuan <strong>node</strong> — komputer yang menjalankan software Ethereum — yang tersebar di seluruh dunia. Ketika petani mengirim transaksi sewa, setiap node menjalankan kode smart contract yang sama dan memverifikasi hasilnya identik. Kalau ada satu node yang mencoba memanipulasi hasilnya, node-node lain akan langsung menolaknya.</p>
+      <p>Ya, ini memang <em>tidak efisien</em> secara komputasi — 1.000 komputer mengerjakan hal yang sama. Tapi itulah "harga" yang dibayar untuk mendapat sifat <strong>trustless</strong>: tidak perlu percaya pada satu pihak mana pun, karena ribuan pihak independen sudah memverifikasinya. Dan kompensasi untuk para validator yang menyumbangkan komputernya itulah yang disebut gas fee.</p>
+    </div>
+  </div>
+</div>
+
+<!-- Q16 -->
+<div class="slide-block">
+  <div class="slide-header" style="background:#1e3a5f">
+    <span class="sl-num">Q16</span>
+    <span class="sl-title">Kalau server ya punya kita. Kalau blockchain yang kamu bangun ini — komputernya punya siapa? Siapa yang menjalankan jaringannya?</span>
+    <span class="sl-time">⭐⭐⭐ Hampir Pasti Keluar — ini pertanyaan paling tajam</span>
+  </div>
+  <div class="slide-body">
+    <div style="background:#fdecea; border-left:4px solid #dc2626; padding:10px 14px; font-size:13px; color:#991b1b; margin-bottom:14px; border-radius:0 6px 6px 0">
+      <strong>Ini pertanyaan paling jebakan — jawab jujur dan tegas. Jangan putar-putar.</strong>
+    </div>
+    <div class="narasi">
+      <p><strong>"Pertanyaan ini sangat penting dan saya ingin menjawabnya dengan jujur."</strong></p>
+      <p>Dalam penelitian ini, blockchain berjalan di <strong>satu komputer — laptop/PC peneliti sendiri</strong>. Hardhat adalah simulator blockchain lokal, bukan jaringan yang tersebar ke mana-mana. Jadi secara fisik, tidak ada "node orang lain" — ini single-node simulation yang berjalan lokal.</p>
+      <p>Ini berbeda dengan blockchain publik seperti Ethereum mainnet, di mana ada ribuan validator di seluruh dunia yang masing-masing memiliki komputernya sendiri, menjalankan node secara sukarela, dan mendapat imbalan ETH. Di sana, tidak ada pemilik tunggal jaringan.</p>
+      <p>Jadi ada dua pertanyaan yang perlu dibedakan:</p>
+      <p><strong>Apa yang diuji penelitian ini?</strong> Logika smart contract-nya — apakah factory-proxy bekerja, apakah RPN menghasilkan kalkulasi yang benar, berapa gas yang dikonsumsi. Semua ini bisa diuji secara deterministik di satu komputer, karena logika Solidity tidak berubah antara jaringan lokal dan jaringan publik.</p>
+      <p><strong>Apa yang belum diuji?</strong> Desentralisasi yang sesungguhnya — apakah sistem tetap berjalan kalau satu node mati, bagaimana perilakunya dengan ribuan transaksi concurrent dari node yang berbeda. Ini adalah keterbatasan yang saya akui dan sudah masuk sebagai saran penelitian: uji kelayakan di jaringan publik.</p>
+      <p>Analoginya: saya membangun dan menguji mesin mobil di bengkel lab — mesinnya benar-benar bekerja dan terukur. Tapi uji jalan di kondisi lalu lintas nyata adalah langkah berikutnya yang belum dilakukan dalam penelitian ini.</p>
+    </div>
+    <div class="tip">Jawaban ini harus disampaikan percaya diri — bukan defensif. Mengakui batasan scope adalah tanda peneliti yang jujur, bukan kelemahan.</div>
+  </div>
+</div>
+
+<!-- Q17 -->
+<div class="slide-block">
+  <div class="slide-header" style="background:#1e3a5f">
+    <span class="sl-num">Q17</span>
+    <span class="sl-title">Kalau dijalankan di node sendiri, nilai gas-nya pasti berbeda di jaringan nyata — jadi klaim RPN lebih hemat itu belum valid dong?</span>
+    <span class="sl-time">⭐⭐⭐ Pertanyaan Jebakan — Tapi Bisa Dijawab Tegas</span>
+  </div>
+  <div class="slide-body">
+    <div style="background:#dcfce7; border-left:4px solid #16a34a; padding:10px 14px; font-size:13px; color:#14532d; margin-bottom:14px; border-radius:0 6px 6px 0">
+      <strong>Ini pertanyaan yang kelihatan menjebak tapi jawabannya justru menunjukkan pemahaman mendalam tentang EVM.</strong> Pertanyaan ini muncul dari kesalahpahaman yang umum: mencampurkan <em>gas usage</em> dengan <em>gas price</em>.
+    </div>
+    <div class="narasi">
+      <p>Perlu dibedakan dua hal yang sangat berbeda: <strong>gas usage</strong> dan <strong>gas price</strong>.</p>
+      <p><strong>Gas usage</strong> — berapa unit komputasi yang dikonsumsi oleh sebuah transaksi — adalah <em>deterministik</em>. Artinya, nilainya sama persis di mana pun, di node mana pun, di jaringan mana pun, selama bytecode smart contract-nya sama. Ini bukan kebetulan — ini adalah syarat wajib agar konsensus blockchain bisa terjadi.</p>
+      <p>Bayangkan ini: kalau 10.000 node di seluruh dunia masing-masing menghitung gas yang berbeda untuk transaksi yang sama, mereka tidak akan pernah bisa sepakat. Blockchain akan hancur. Justru karena gas usage deterministik — setiap node mendapat angka yang persis sama — konsensus bisa tercapai. <strong>Spesifikasi EVM (Ethereum Virtual Machine) mendefinisikan secara eksplisit berapa gas yang dikenakan untuk setiap opcode</strong> — SSTORE, MLOAD, CALL, dan seterusnya. Ini berlaku sama di Hardhat lokal maupun di Ethereum mainnet dengan jutaan node.</p>
+      <p>Jadi ketika saya mengukur setRules() = 495.962 gas di Hardhat: angka itu adalah angka yang <em>sama persis</em> yang akan diperoleh di jaringan testnet Sepolia, di Polygon, atau di Ethereum mainnet — selama bytecode kontraknya identik. Bukan estimasi, bukan kira-kira.</p>
+      <p>Yang berubah di jaringan nyata bukan gas usage-nya, tapi <strong>gas price</strong> — yaitu seberapa mahal setiap unit gas dalam ETH, yang ditentukan oleh permintaan pasar saat itu. Tapi itu soal biaya rupiah, bukan soal efisiensi komputasi yang saya ukur.</p>
+      <p>Jadi klaim <strong>7,3× lebih hemat</strong> itu valid secara universal — karena yang dibandingkan adalah unit komputasi (gas usage), bukan harga pasar.</p>
+    </div>
+    <div style="background:#f0fdf4; border:1px solid #86efac; border-radius:8px; padding:12px 16px; margin-top:12px; font-size:13px;">
+      <strong style="color:var(--green)">Ringkasan satu kalimat kalau ditanya singkat:</strong>
+      <p style="color:#14532d; margin-top:4px">
+        "Gas <em>usage</em> bersifat deterministik dan didefinisikan oleh spesifikasi EVM — nilainya sama di semua node dan semua jaringan untuk bytecode yang sama. Yang berubah di jaringan nyata adalah gas <em>price</em>, bukan gas <em>usage</em>. Perbandingan 495.962 vs 3.604.010 adalah perbandingan usage, sehingga valid di mana pun."
+      </p>
+    </div>
+    <div class="tip">Kalau dosen masih mengejar: "Tapi kan Hardhat beda dengan mainnet?" — jawab: "Hardhat secara eksplisit mengimplementasikan spesifikasi EVM yang sama. Itu sebabnya Hardhat menjadi standar industri untuk pengujian smart contract sebelum deploy ke mainnet. Hasilnya reproducible."</div>
+  </div>
+</div>
+
+<!-- Q18 -->
+<div class="slide-block">
+  <div class="slide-header" style="background:#1e3a5f">
+    <span class="sl-num">Q18</span>
+    <span class="sl-title">Kalau di jaringan publik nanti tidak ada verifikator — jaringannya tidak bisa jalan dong? Konsensus tidak tercapai?</span>
+    <span class="sl-time">⭐⭐ Sangat Mungkin Keluar sebagai follow-up</span>
+  </div>
+  <div class="slide-body">
+    <div class="narasi">
+      <p>Saya jawab dengan analogi dulu. Bayangkan sebuah <strong>koperasi simpan pinjam</strong>. Koperasi ini tidak punya satu direktur tunggal — keputusannya diambil bersama oleh seluruh anggota. Pertanyaannya: apa yang terjadi kalau sebagian anggota tidak hadir rapat?</p>
+      <p>Jawabannya: selama lebih dari setengah anggota masih hadir, koperasi tetap bisa mengambil keputusan yang sah. Kalau mayoritas tiba-tiba menghilang, rapat ditunda — bukan mengambil keputusan yang salah.</p>
+      <p>Blockchain Ethereum bekerja persis seperti itu. Saat ini ada lebih dari <strong>900.000 validator</strong> yang aktif di seluruh dunia. Mereka mendapatkan imbalan berupa ETH sebagai kompensasi menyumbangkan komputernya — jadi ada insentif ekonomi yang menjaga mereka tetap aktif.</p>
+      <p>Aturan konsensusnya: jaringan butuh minimal <strong>2/3 dari total stake online</strong> untuk bisa memproses blok baru. Kalau kurang dari itu karena banyak validator mati mendadak, jaringan bukan langsung rusak atau menghasilkan data palsu — jaringan <em>berhenti sejenak dan menunggu</em>. Ini jauh lebih aman dibanding server konvensional: kalau server kita mati, sistem langsung mati total. Kalau sebagian validator Ethereum mati, jaringan pause — dan tidak ada data yang dikorupsi.</p>
+      <p>Dan untuk konteks penelitian ini yang berjalan di Hardhat lokal: pertanyaan ini memang belum relevan karena belum ada deploy ke jaringan publik. Tapi desain arsitekturnya sudah kompatibel dengan Ethereum mainnet maupun Layer 2 — jadi ketika nanti dipindah ke sana, properti keamanan jaringan publik langsung berlaku.</p>
+    </div>
+    <div style="background:#f0fdf4; border:1px solid #86efac; border-radius:8px; padding:12px 16px; margin-top:12px; font-size:13px; color:#14532d;">
+      <strong>Ringkasan satu kalimat:</strong> "Ethereum punya 900.000+ validator yang diberi insentif ekonomi untuk tetap aktif. Kalau sebagian mati, jaringan pause — bukan corrupt. Ini justru lebih andal dari server tunggal yang kalau mati, sistemnya langsung ikut mati."
+    </div>
+  </div>
+</div>
+
+<!-- Q19 -->
+<div class="slide-block">
+  <div class="slide-header" style="background:#1e3a5f">
+    <span class="sl-num">Q19</span>
+    <span class="sl-title">Konsensus itu kapan dijalankan? Masa setiap transaksi harus diverifikasi ribuan node dulu — kelamaan dong?</span>
+    <span class="sl-time">⭐⭐⭐ Hampir Pasti Keluar — ini kesalahpahaman yang sangat umum</span>
+  </div>
+  <div class="slide-body">
+    <div style="background:#fef3c7; border-left:4px solid #f59e0b; padding:10px 14px; font-size:13px; color:#78350f; margin-bottom:14px; border-radius:0 6px 6px 0">
+      <strong>Pertanyaan ini muncul karena membayangkan ribuan node mengantri satu per satu memverifikasi transaksi. Kenyataannya sangat berbeda.</strong>
+    </div>
+    <div class="narasi">
+      <p>Saya jelaskan dengan analogi <strong>stasiun kereta</strong>.</p>
+      <p>Bayangkan ratusan penumpang datang ke stasiun setiap menit. Mereka tidak masuk kereta satu per satu setelah masing-masing dicek oleh 1.000 petugas secara bergiliran — itu memang akan sangat lama. Yang terjadi justru: semua penumpang menunggu di peron (<em>mempool</em>), lalu setiap <strong>12 detik</strong> kereta berangkat (<em>blok baru dibuat</em>). Satu kondektur (<em>validator proposer</em>) mengumpulkan semua tiket sekaligus dan memasukkan ke dalam satu blok. Kemudian sebuah panel kecil — sekitar <strong>128 validator</strong> dari total ratusan ribu — melakukan verifikasi cepat secara <em>paralel, bukan berurutan</em>. Kalau mayoritas panel setuju, kereta berangkat. Penumpang sudah di dalam — transaksi sudah masuk blok.</p>
+      <p>Jadi yang terjadi bukan: <em>satu transaksi → 900.000 node antri satu per satu → baru selesai</em>. Yang terjadi adalah:</p>
+      <p>① Banyak transaksi dikumpulkan dulu di <em>mempool</em> (ruang tunggu). ② Setiap 12 detik, <strong>satu validator terpilih acak</strong> membuat blok berisi semua transaksi itu sekaligus. ③ Sekitar 128 validator lain memverifikasi blok itu secara <strong>paralel dan simultan</strong> — bukan bergiliran. ④ Kalau 2/3 dari 128 itu setuju → blok disahkan. Selesai dalam hitungan detik.</p>
+      <p>Hasilnya: transaksi di Ethereum masuk blok dalam <strong>sekitar 12 detik</strong>. Di Layer 2 seperti Polygon atau Arbitrum, bahkan kurang dari 2 detik. Di Hardhat lokal seperti yang dipakai penelitian ini: <strong>instan</strong> — karena tidak perlu consensus sungguhan, langsung dikonfirmasi.</p>
+      <p>Jadi "lambat" itu relatif. 12 detik memang lebih lama dari database yang responsnya milidetik. Tapi untuk mendapat sifat <em>trustless</em>, <em>permanen</em>, dan <em>tidak bisa dimanipulasi siapa pun</em> — 12 detik adalah harga yang sangat wajar. Dan untuk sewa alat pertanian yang transaksinya tidak butuh real-time seperti transaksi saham, ini lebih dari cukup.</p>
+    </div>
+
+    <!-- Visual timeline -->
+    <div style="margin-top:16px; background:#0f172a; border-radius:10px; padding:16px 18px; font-family:monospace; font-size:13px; color:#e2e8f0;">
+      <div style="color:#94a3b8; margin-bottom:10px;">// Timeline satu transaksi sewa alat di Ethereum:</div>
+      <div style="display:flex; flex-direction:column; gap:6px;">
+        <div><span style="color:#fbbf24">t=0 detik  </span> <span style="color:#e2e8f0">→ Petani klik "Konfirmasi Sewa" di MetaMask</span></div>
+        <div><span style="color:#fbbf24">t=0–12 dtk</span> <span style="color:#e2e8f0">→ Transaksi masuk mempool (ruang tunggu)</span></div>
+        <div><span style="color:#fbbf24">t=~12 dtk </span> <span style="color:#4ade80">→ Validator proposer memasukkan ke blok</span></div>
+        <div><span style="color:#fbbf24">t=~12 dtk </span> <span style="color:#4ade80">→ 128 validator paralel memverifikasi blok</span></div>
+        <div><span style="color:#fbbf24">t=~12 dtk </span> <span style="color:#60a5fa">→ ✅ Transaksi confirmed — sewa tercatat on-chain</span></div>
+        <div style="margin-top:6px; color:#94a3b8">// Di Hardhat lokal: t=~100ms (instant, no real consensus)</div>
+        <div style="color:#94a3b8">// Di Layer 2 (Polygon): t=~2 detik</div>
+      </div>
+    </div>
+
+    <div style="background:#f0fdf4; border:1px solid #86efac; border-radius:8px; padding:12px 16px; margin-top:12px; font-size:13px; color:#14532d;">
+      <strong>Ringkasan satu kalimat:</strong> "Ribuan node tidak antri satu per satu — mereka bekerja secara paralel dan memverifikasi <em>blok</em> berisi banyak transaksi sekaligus, setiap 12 detik. Bukan per transaksi, tapi per blok."
+    </div>
+    <div class="tip">Kalau dosen tanya: "12 detik itu masih kelamaan untuk petani" — jawab: "Transaksi sewa alat pertanian tidak butuh real-time seperti trading saham. Petani klik konfirmasi, pergi minum kopi, 12 detik kemudian sewa tercatat permanen dan tidak bisa dimanipulasi siapa pun. Tradeoff ini sangat wajar."</div>
+  </div>
+</div>
+
+<!-- Q20 -->
+<div class="slide-block">
+  <div class="slide-header" style="background:#1e3a5f">
+    <span class="sl-num">Q20</span>
+    <span class="sl-title">Validator itu tugasnya apa? Apa yang divalidasi? Emang dia tahu data kita — isi transaksi kita?</span>
+    <span class="sl-time">⭐⭐ Sangat Mungkin Keluar</span>
+  </div>
+  <div class="slide-body">
+    <div class="narasi">
+      <p>Analoginya begini: bayangkan Anda mengirim surat ke kantor pos. Petugas kantor pos memeriksa: apakah perangko cukup, apakah amplop tertutup rapat, apakah alamat tujuan ditulis dengan benar, apakah berat paket sesuai. Petugas <em>tidak membuka surat dan tidak membaca isinya</em>. Tugasnya hanya memastikan surat itu sah dan layak dikirim.</p>
+      <p>Validator blockchain bekerja persis seperti itu. Yang mereka verifikasi adalah:</p>
+      <p><strong>① Tanda tangan digital valid</strong> — apakah transaksi ini benar-benar dikirim oleh pemilik wallet tersebut, bukan orang lain yang memalsukan? Ini dicek secara matematis menggunakan kriptografi ECDSA, bukan dengan "membaca" identitas pengirim.</p>
+      <p><strong>② Saldo cukup</strong> — apakah wallet pengirim punya cukup ETH untuk membayar gas transaksi ini?</p>
+      <p><strong>③ Nonce benar</strong> — apakah urutan transaksi dari wallet ini konsisten? Ini untuk mencegah transaksi yang sama dikirim ulang atau dimanipulasi urutannya.</p>
+      <p><strong>④ Eksekusi smart contract sesuai spesifikasi EVM</strong> — apakah hasil komputasinya valid dan gas yang dikonsumsi sesuai aturan?</p>
+      <p>Validator tidak "membaca" bahwa ini transaksi sewa traktor oleh Pak Budi dari Bogor. Yang mereka lihat adalah: alamat pengirim <code>0xf39F…</code>, alamat kontrak tujuan <code>0xServiceCategoryProxy…</code>, sejumlah byte data yang mewakili pemanggilan fungsi, dan jumlah ETH yang dikirim. Mereka adalah <strong>pemeriksa matematis, bukan pembaca konten</strong>.</p>
+    </div>
+    <div style="background:#f0fdf4; border:1px solid #86efac; border-radius:8px; padding:12px 16px; margin-top:12px; font-size:13px; color:#14532d;">
+      <strong>Ringkasan satu kalimat:</strong> "Validator seperti petugas kantor pos — mereka cek apakah surat valid dan perangko cukup, tapi tidak baca isi suratnya. Yang dicek adalah keabsahan tanda tangan, kecukupan saldo, dan kebenaran komputasi EVM — bukan 'siapa menyewa apa'."
+    </div>
+  </div>
+</div>
+
+<!-- Q21 -->
+<div class="slide-block">
+  <div class="slide-header" style="background:#1e3a5f">
+    <span class="sl-num">Q21</span>
+    <span class="sl-title">Berarti data kita bocor ke publik dong? Nama, alamat, harga — semua bisa dilihat orang?</span>
+    <span class="sl-time">⭐⭐⭐ Hampir Pasti Keluar — berkaitan langsung dengan UU PDP</span>
+  </div>
+  <div class="slide-body">
+    <div style="background:#fdecea; border-left:4px solid #dc2626; padding:10px 14px; font-size:13px; color:#991b1b; margin-bottom:14px; border-radius:0 6px 6px 0">
+      <strong>Pertanyaan ini sangat penting — terutama dalam konteks UU Pelindungan Data Pribadi (UU No. 27/2022).</strong> Jawab dengan membedakan data on-chain dan off-chain secara jelas.
+    </div>
+    <div class="narasi">
+      <p>Ini pertanyaan yang sangat tepat dan jawabannya ada di desain sistem yang sudah dipikirkan sejak awal. Sistem ini menggunakan <strong>pendekatan hybrid</strong> — tidak semua data masuk ke blockchain. Ada pemisahan yang eksplisit antara data yang memang harus publik dan data yang harus tetap privat.</p>
+
+      <p><strong>Data yang TIDAK masuk blockchain (disimpan di MongoDB off-chain):</strong></p>
+      <p>Nama pengguna, alamat rumah, nomor HP, email, foto alat pertanian, deskripsi lengkap alat — semua ini disimpan di database biasa yang aksesnya dikontrol. Ini data privat yang tidak perlu diketahui publik.</p>
+
+      <p><strong>Data yang masuk blockchain (publik, by design):</strong></p>
+      <p>Alamat wallet (misalnya <code>0xf39F…2266</code>), jumlah ETH yang dikunci, status sewa (ACTIVE/COMPLETED), ID sewa, hash metadata alat — bukan nama aslinya. Identitas pengguna di blockchain hanya berupa <strong>alamat wallet yang bersifat pseudonymous</strong> — seperti nomor rekening bank tanpa nama pemiliknya.</p>
+
+      <p>Analoginya seperti <strong>rekening koran yang dipublikasikan</strong>: Anda bisa lihat transaksi "rekening nomor 1234 mengirim Rp 50.000 ke rekening nomor 5678" — tapi tidak tahu siapa pemilik rekening itu kecuali ada cara lain untuk menghubungkannya.</p>
+
+      <p><strong>Soal harga alat</strong> — ini memang sengaja publik dan itu adalah <em>fitur</em>, bukan bug. Transparansi harga adalah inti dari sistem ini. Petani bisa verifikasi sendiri bahwa harga yang dikenakan sesuai dengan aturan yang tertulis di smart contract — tidak bisa diubah diam-diam. Ini justru yang membedakan dari sistem konvensional yang harganya bisa berubah sepihak.</p>
+
+      <p><strong>Untuk metadata alat</strong> — sistem ini menggunakan <code>EquipmentRegistry</code> yang hanya menyimpan <em>hash kriptografis</em> dari metadata alat, bukan data aslinya. Seperti sidik jari dokumen — Anda bisa membuktikan dokumen tidak diubah tanpa perlu mempublikasikan isinya.</p>
+    </div>
+
+    <!-- Tabel ringkasan on-chain vs off-chain data -->
+    <div style="margin-top:16px; overflow-x:auto;">
+      <table style="width:100%; border-collapse:collapse; font-size:13px;">
+        <thead>
+          <tr style="background:var(--navy); color:white;">
+            <th style="padding:10px 14px; text-align:left;">Jenis Data</th>
+            <th style="padding:10px 14px; text-align:center;">Lokasi</th>
+            <th style="padding:10px 14px; text-align:center;">Bisa Dilihat Publik?</th>
+            <th style="padding:10px 14px; text-align:left;">Alasan</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr style="background:#fdecea;">
+            <td style="padding:9px 14px; border-bottom:1px solid var(--border)">Nama, email, alamat, HP</td>
+            <td style="padding:9px 14px; text-align:center; border-bottom:1px solid var(--border)">MongoDB (off-chain)</td>
+            <td style="padding:9px 14px; text-align:center; border-bottom:1px solid var(--border); color:#dc2626; font-weight:700">🔒 Tidak</td>
+            <td style="padding:9px 14px; border-bottom:1px solid var(--border)">Data pribadi — dikontrol aksesnya</td>
+          </tr>
+          <tr style="background:#fdecea;">
+            <td style="padding:9px 14px; border-bottom:1px solid var(--border)">Foto &amp; deskripsi alat</td>
+            <td style="padding:9px 14px; text-align:center; border-bottom:1px solid var(--border)">MongoDB (off-chain)</td>
+            <td style="padding:9px 14px; text-align:center; border-bottom:1px solid var(--border); color:#dc2626; font-weight:700">🔒 Tidak</td>
+            <td style="padding:9px 14px; border-bottom:1px solid var(--border)">Konten media — tidak efisien di blockchain</td>
+          </tr>
+          <tr style="background:#fef3c7;">
+            <td style="padding:9px 14px; border-bottom:1px solid var(--border)">Harga sewa per hari</td>
+            <td style="padding:9px 14px; text-align:center; border-bottom:1px solid var(--border)">Blockchain (on-chain)</td>
+            <td style="padding:9px 14px; text-align:center; border-bottom:1px solid var(--border); color:#d97706; font-weight:700">🌐 Ya — disengaja</td>
+            <td style="padding:9px 14px; border-bottom:1px solid var(--border)">Transparansi harga = inti sistem</td>
+          </tr>
+          <tr style="background:#fef3c7;">
+            <td style="padding:9px 14px; border-bottom:1px solid var(--border)">Jumlah ETH transaksi</td>
+            <td style="padding:9px 14px; text-align:center; border-bottom:1px solid var(--border)">Blockchain (on-chain)</td>
+            <td style="padding:9px 14px; text-align:center; border-bottom:1px solid var(--border); color:#d97706; font-weight:700">🌐 Ya — disengaja</td>
+            <td style="padding:9px 14px; border-bottom:1px solid var(--border)">Bukti transaksi yang bisa diaudit</td>
+          </tr>
+          <tr style="background:#dcfce7;">
+            <td style="padding:9px 14px; border-bottom:1px solid var(--border)">Identitas pengguna</td>
+            <td style="padding:9px 14px; text-align:center; border-bottom:1px solid var(--border)">Blockchain (on-chain)</td>
+            <td style="padding:9px 14px; text-align:center; border-bottom:1px solid var(--border); color:#16a34a; font-weight:700">🔑 Pseudonymous</td>
+            <td style="padding:9px 14px; border-bottom:1px solid var(--border)">Hanya alamat wallet (0x…) — bukan nama asli</td>
+          </tr>
+          <tr style="background:#dcfce7;">
+            <td style="padding:9px 14px;">Metadata alat</td>
+            <td style="padding:9px 14px; text-align:center;">Blockchain (on-chain)</td>
+            <td style="padding:9px 14px; text-align:center; color:#16a34a; font-weight:700">🔑 Hash saja</td>
+            <td style="padding:9px 14px;">Hanya sidik jari (keccak256 hash), bukan data aslinya</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div style="background:#f0fdf4; border:1px solid #86efac; border-radius:8px; padding:12px 16px; margin-top:12px; font-size:13px; color:#14532d;">
+      <strong>Ringkasan satu kalimat:</strong> "Data pribadi (nama, alamat, email) disimpan off-chain di MongoDB — tidak masuk blockchain. Yang on-chain hanya alamat wallet pseudonymous, jumlah ETH, dan hash metadata — ini sengaja publik karena transparansi adalah fitur utama sistem, bukan bug."
+    </div>
+    <div class="tip">Kalau dosen tanya soal UU PDP: "Sistem ini dirancang dengan pemisahan data yang eksplisit — data pribadi tidak masuk blockchain, sesuai prinsip data minimization dalam UU PDP No. 27/2022. Identitas di blockchain bersifat pseudonymous, bukan berisi nama atau alamat asli."</div>
+  </div>
+</div>
+
+<!-- Q22 -->
+<div class="slide-block">
+  <div class="slide-header" style="background:#1e3a5f">
+    <span class="sl-num">Q22</span>
+    <span class="sl-title">Semua orang bisa lihat data di publik — cara lihatnya gimana? Apa tidak susah diakses masyarakat desa?</span>
+    <span class="sl-time">⭐⭐ Sangat Mungkin Keluar — berkaitan adopsi sistem</span>
+  </div>
+  <div class="slide-body">
+    <div class="narasi">
+      <p>Ada dua cara mengakses data on-chain, dan keduanya punya tingkat kemudahan yang berbeda.</p>
+
+      <p><strong>Cara 1 — Lewat aplikasi frontend (cara yang dipakai petani):</strong><br>
+      Petani membuka halaman web sistem ini — tampilannya seperti aplikasi biasa. Riwayat transaksi, status sewa, dan biaya sudah diterjemahkan dari data on-chain ke tampilan yang mudah dipahami. Petani tidak perlu tahu apa itu blockchain — cukup buka website, lihat riwayat sewa mereka. Ini seperti buka <em>mobile banking</em> — Anda tidak perlu baca kode database bank untuk melihat saldo rekening.</p>
+
+      <p><strong>Cara 2 — Verifikasi mandiri lewat block explorer (cara teknis):</strong><br>
+      Kalau ada pihak yang ingin memverifikasi sendiri tanpa bergantung pada aplikasi — misalnya penyuluh pertanian atau lembaga pengawas — mereka bisa buka website seperti <strong>Etherscan.io</strong> (untuk Ethereum) atau <strong>Polygonscan.com</strong> (untuk Polygon). Masukkan alamat wallet atau nomor transaksi — langsung terlihat semua riwayat transaksinya, lengkap dengan timestamp, jumlah, dan status. Ini seperti <em>membaca rekening koran langsung di Bank Indonesia</em> tanpa perantara aplikasi bank.</p>
+
+      <p><strong>Soal masyarakat desa:</strong><br>
+      Jujur, cara kedua memang butuh akses internet dan sedikit literasi digital. Ini adalah tantangan adopsi nyata yang saya akui. Namun perlu dipahami bahwa <em>yang penting adalah data-nya bisa diverifikasi secara independen</em> — tidak harus oleh petaninya sendiri. Bisa oleh pendamping desa, koperasi tani, atau lembaga pengawas yang bertindak atas nama petani. Analoginya: petani tidak harus bisa baca akta notaris sendiri — tapi akta itu bisa diverifikasi oleh siapa saja yang punya akses, termasuk pengacara atau petugas BPN yang membantu petani. Transparansi bukan berarti semua orang harus mengaksesnya secara teknis — tapi semua orang <em>bisa</em> mengaksesnya kalau dibutuhkan.</p>
+    </div>
+
+    <!-- Visual: dua jalur akses -->
+    <div style="display:grid; grid-template-columns:1fr 1fr; gap:12px; margin-top:14px;">
+      <div style="background:var(--light-blue); border:1px solid #93c5fd; border-radius:10px; padding:14px 16px;">
+        <div style="font-weight:700; color:var(--navy); margin-bottom:8px; font-size:13px">📱 Via Frontend Aplikasi</div>
+        <div style="font-size:12px; color:var(--gray); line-height:1.8">
+          ✅ Ramah pengguna<br>
+          ✅ Tidak perlu tahu blockchain<br>
+          ✅ Data sudah diterjemahkan<br>
+          ⚠️ Butuh percaya pada aplikasi<br>
+          <span style="color:var(--navy); font-weight:600">→ Untuk petani sehari-hari</span>
+        </div>
+      </div>
+      <div style="background:var(--light-green); border:1px solid #6ee7b7; border-radius:10px; padding:14px 16px;">
+        <div style="font-weight:700; color:var(--green); margin-bottom:8px; font-size:13px">🔍 Via Block Explorer (Etherscan)</div>
+        <div style="font-size:12px; color:var(--gray); line-height:1.8">
+          ✅ Independen — tanpa perantara<br>
+          ✅ Data langsung dari blockchain<br>
+          ✅ Bisa dilakukan siapa saja<br>
+          ⚠️ Butuh literasi digital<br>
+          <span style="color:var(--green); font-weight:600">→ Untuk verifikasi independen</span>
+        </div>
+      </div>
+    </div>
+
+    <div style="background:#f0fdf4; border:1px solid #86efac; border-radius:8px; padding:12px 16px; margin-top:12px; font-size:13px; color:#14532d;">
+      <strong>Ringkasan:</strong> "Petani pakai frontend yang sudah user-friendly — tidak perlu tahu blockchain. Tapi siapa pun yang mau verifikasi mandiri bisa buka Etherscan dan masukkan nomor transaksi — tanpa izin siapa pun. Ini seperti bedanya pakai mobile banking vs baca rekening koran langsung di BI."
+    </div>
+  </div>
+</div>
+
+<!-- Q23 -->
+<div class="slide-block">
+  <div class="slide-header" style="background:#1e3a5f">
+    <span class="sl-num">Q23</span>
+    <span class="sl-title">Harga gas fluktuatif mengikuti ETH? ETH itu sebetulnya apa — kenapa banyak yang trading? Apa yang dibeli ketika beli ETH?</span>
+    <span class="sl-time">⭐⭐ Sangat Mungkin Keluar — terlihat di luar scope tapi relevan ke biaya sistem</span>
+  </div>
+  <div class="slide-body">
+    <div style="background:#fef3c7; border-left:4px solid #f59e0b; padding:10px 14px; font-size:13px; color:#78350f; margin-bottom:14px; border-radius:0 6px 6px 0">
+      <strong>Pertanyaan ini memiliki tiga lapis — jawab satu per satu: (1) fluktuasi gas, (2) apa itu ETH, (3) apa yang dibeli.</strong>
+    </div>
+    <div class="narasi">
+
+      <p><strong>① Apakah gas price fluktuatif mengikuti harga ETH?</strong></p>
+      <p>Perlu dibedakan tiga hal yang sering dicampur: <em>gas usage</em>, <em>gas price</em>, dan <em>harga ETH</em>.</p>
+      <p><strong>Gas usage</strong> (unit komputasi yang dipakai) = deterministik, tidak pernah berubah untuk kode yang sama. Ini yang diukur di penelitian: 495.962 unit untuk RPN.<br>
+      <strong>Gas price</strong> (harga per unit, diukur dalam satuan gwei) = fluktuatif mengikuti seberapa ramai jaringan saat itu — bukan langsung mengikuti harga ETH. Saat transaksi serentak banyak, gas price naik karena orang "berebut" slot blok. Saat sepi, gas price turun. Analoginya seperti <strong>harga ojek online saat hujan</strong> — lebih mahal karena banyak yang butuh, bukan karena harga bensin naik.<br>
+      <strong>Harga ETH</strong> (nilai tukar ke rupiah) = fluktuatif mengikuti pasar kripto global.</p>
+      <p>Biaya akhir dalam rupiah = Gas Usage × Gas Price × Harga ETH. Jadi ketiga faktor mempengaruhi biaya rupiah, tapi yang diukur penelitian ini hanya gas usage — dan itu valid serta tidak terpengaruh fluktuasi apapun.</p>
+
+      <hr style="border:none; border-top:1px solid var(--border); margin:16px 0">
+
+      <p><strong>② ETH itu sebetulnya apa?</strong></p>
+      <p>ETH (Ether) adalah <strong>mata uang native jaringan Ethereum</strong> — seperti "bahan bakar" yang dibutuhkan untuk menjalankan komputasi di atas jaringan Ethereum. Tanpa ETH, tidak ada transaksi yang bisa diproses.</p>
+      <p>Analoginya seperti <strong>token koin di wahana permainan</strong>: Anda tukar rupiah ke koin, lalu pakai koin untuk main. Koin itu tidak punya nilai di luar wahana — nilainya tergantung seberapa ramai wahana itu dan seberapa banyak yang mau beli koin. Bedanya, ETH bisa diperjualbelikan secara global dan nilainya naik-turun tergantung permintaan pasar.</p>
+
+      <hr style="border:none; border-top:1px solid var(--border); margin:16px 0">
+
+      <p><strong>③ Kenapa banyak yang trading ETH? Apa yang sebenarnya dibeli?</strong></p>
+      <p>Ketika seseorang <em>membeli ETH</em>, secara teknis mereka memiliki sejumlah unit ETH yang tersimpan di wallet address mereka di blockchain Ethereum. Tidak ada sertifikat fisik, tidak ada saham perusahaan — yang mereka miliki adalah <strong>hak eksklusif atas sejumlah unit dalam sistem blockchain Ethereum</strong>, dibuktikan oleh kunci kriptografis private key mereka.</p>
+      <p>Kenapa banyak yang trading? Karena ETH punya <em>utility nyata</em>: dibutuhkan untuk menggunakan semua aplikasi di atas Ethereum — DeFi, NFT, smart contract, termasuk sistem seperti yang dibangun penelitian ini. Semakin banyak aplikasi dan pengguna Ethereum → semakin besar permintaan ETH → nilainya cenderung naik. Orang-orang yang percaya Ethereum akan terus berkembang membeli ETH sekarang dengan harapan nilainya naik di masa depan — itulah yang mendorong trading.</p>
+      <p><strong>Relevansinya ke penelitian ini:</strong> dalam penelitian, tidak ada ETH sungguhan yang digunakan — Hardhat menghasilkan ETH palsu (test ETH) untuk keperluan simulasi. Kalau sistem ini dipindah ke jaringan publik, baru diperlukan ETH nyata untuk membayar gas. Dan itulah mengapa argumen Layer 2 menjadi penting — biaya ETH yang lebih rendah membuat sistem lebih feasible untuk petani Indonesia.</p>
+    </div>
+
+    <!-- Visual: tiga komponen biaya -->
+    <div style="background:#0f172a; border-radius:10px; padding:16px 18px; margin-top:14px; font-family:monospace; font-size:13px; color:#e2e8f0;">
+      <div style="color:#94a3b8; margin-bottom:10px">// Rumus biaya transaksi dalam rupiah:</div>
+      <div style="color:#fbbf24">Biaya (IDR) = Gas Usage × Gas Price × Harga ETH</div>
+      <div style="margin-top:10px; display:flex; flex-direction:column; gap:6px; font-size:12px;">
+        <div><span style="color:#4ade80">Gas Usage</span>  <span style="color:#94a3b8">= 495.962 unit  → TETAP, deterministik, diukur penelitian ini ✅</span></div>
+        <div><span style="color:#fbbf24">Gas Price </span>  <span style="color:#94a3b8">= ~20 gwei      → FLUKTUATIF, tergantung keramaian jaringan ⚠️</span></div>
+        <div><span style="color:#f87171">Harga ETH </span>  <span style="color:#94a3b8">= ~Rp 50 juta   → FLUKTUATIF, tergantung pasar global ⚠️</span></div>
+        <div style="margin-top:8px; color:#60a5fa">// Penelitian mengukur Gas Usage saja → valid, tidak terpengaruh fluktuasi</div>
+      </div>
+    </div>
+
+    <div style="background:#f0fdf4; border:1px solid #86efac; border-radius:8px; padding:12px 16px; margin-top:12px; font-size:13px; color:#14532d;">
+      <strong>Ringkasan satu kalimat:</strong> "Gas price memang fluktuatif, tapi yang diukur penelitian ini adalah gas <em>usage</em> — deterministik dan tidak terpengaruh fluktuasi apapun. ETH adalah bahan bakar jaringan Ethereum, nilainya naik-turun karena utility dan spekulasi pasar. Di penelitian ini, tidak ada ETH sungguhan yang digunakan — semuanya simulasi di Hardhat."
+    </div>
+    <div class="tip">Kalau dosen kejar "berarti kalau ETH naik, petani tidak bisa bayar?" — jawab: "Justru ini alasan saya rekomendasikan Layer 2 di saran penelitian. Di Polygon misalnya, gas price bisa 1000× lebih murah, dan ada opsi gasless transaction di mana biaya gas ditanggung operator sistem, bukan petani langsung."</div>
+  </div>
+</div>
+
+<!-- KATEGORI 8: PERTANYAAN LINTAS SEKTOR & KEBIJAKAN -->
+<div style="background:#064e3b; color:white; border-radius:10px; padding:10px 18px; margin-bottom:16px; margin-top:28px; font-weight:700; font-size:14px; letter-spacing:.05em;">
+  🔷 KATEGORI 8 — Lintas Sektor, Kebijakan, dan Pertanyaan Awam Tajam
+</div>
+
+<!-- Q24 -->
+<div class="slide-block">
+  <div class="slide-header" style="background:#065f46">
+    <span class="sl-num">Q24</span>
+    <span class="sl-title">Kenapa tidak pakai sistem yang sudah ada dari pemerintah saja? SIMDA, SIPD, SiHalal, e-monev — kenapa perlu buat baru?</span>
+    <span class="sl-time">⭐⭐⭐ Hampir Pasti Keluar — dari audiens kebijakan / FEMA</span>
+  </div>
+  <div class="slide-body">
+    <div style="background:#ecfdf5; border-left:4px solid #10b981; padding:10px 14px; font-size:13px; color:#064e3b; margin-bottom:14px; border-radius:0 6px 6px 0">
+      <strong>Pertanyaan ini sangat wajar dari audiens kebijakan atau ekonomi. Jangan defensif — posisikan penelitian sebagai pelengkap, bukan pengganti.</strong>
+    </div>
+    <div class="narasi">
+      <p>Pertanyaan yang sangat relevan dan saya senang ditanya ini. Sistem pemerintah yang ada — SIMDA, SIPD, dan sejenisnya — sudah sangat baik untuk keperluan administrasi dan pelaporan internal. Tapi ada satu hal yang secara fundamental tidak bisa diselesaikan sistem-sistem itu: <strong>kepercayaan antar pihak yang tidak saling mengenal dan tidak punya alasan untuk percaya satu sama lain.</strong></p>
+      <p>Begini analoginya. SIMDA itu seperti buku kas di kantor dinas — aksesnya dikontrol, bisa diubah oleh yang punya akses admin, dan petani tidak bisa memverifikasi sendiri apakah catatan itu benar. Itu bukan kesalahan sistem — memang begitu desain database terpusat. Tapi di sinilah masalahnya: <strong>ketika petani tidak percaya pada pengelola sistem, siapa yang bisa membuktikan bahwa catatan itu tidak dimanipulasi?</strong></p>
+      <p>Blockchain menjawab masalah kepercayaan ini bukan dengan "sistem baru yang lebih canggih", tapi dengan properti matematisnya: data yang sudah masuk tidak bisa diubah oleh siapa pun — termasuk pemerintah sendiri. Ini berbeda secara fundamental dari database terpusat manapun.</p>
+      <p>Dan posisi penelitian ini bukan menggantikan SIMDA atau SIPD. Justru, arsitektur yang dibangun di sini bisa menjadi <strong>lapisan verifikasi on-chain</strong> di atas sistem pemerintah yang ada — bukan saingan, tapi pelengkap untuk aspek yang membutuhkan jaminan immutability.</p>
+    </div>
+    <div class="tip">Kalau dosen kejar "tapi biayanya lebih mahal kan?" — jawab: "Biaya blockchain memang lebih tinggi per transaksi dari database biasa. Ini adalah tradeoff yang disadari: Anda membayar lebih untuk mendapat properti immutability dan trustless verification yang tidak bisa diberikan database konvensional. Untuk transaksi yang melibatkan akuntabilitas publik dan distribusi dana, tradeoff ini bisa dibenarkan."</div>
+  </div>
+</div>
+
+<!-- Q25 -->
+<div class="slide-block">
+  <div class="slide-header" style="background:#065f46">
+    <span class="sl-num">Q25</span>
+    <span class="sl-title">Sistem ini hanya untuk alat pertanian? Tidak bisa dipakai untuk perikanan, peternakan, atau sektor lain?</span>
+    <span class="sl-time">⭐⭐ Sangat Mungkin Keluar — dari Fak. Perikanan / Peternakan</span>
+  </div>
+  <div class="slide-body">
+    <div class="narasi">
+      <p>Justru ini salah satu kekuatan arsitekturnya. Sistem ini dibangun generik secara desain — "alat pertanian" hanya konteks yang dipakai dalam penelitian, bukan batasan teknis dari sistemnya.</p>
+      <p>Dalam smart contract yang dibangun, ada konsep <strong>"kategori layanan"</strong> (<em>ServiceCategory</em>) yang bisa dikonfigurasi untuk jenis aset apa pun. Aturan biaya, alur sewa, dan mekanisme pengembaliannya bisa disesuaikan per kategori. Jadi secara teknis, sistem yang sama bisa dipakai untuk:</p>
+      <p>— <strong>Alat perikanan</strong>: jaring, mesin kapal, coolbox — dengan aturan biaya yang berbeda per kategori alat dan daerah.<br>
+      — <strong>Alat peternakan</strong>: mesin penggiling pakan, kandang sementara, kendaraan ternak.<br>
+      — <strong>Peralatan medis komunitas</strong>: alat diagnostik yang disewakan ke puskesmas desa.<br>
+      — <strong>Aset desa</strong>: traktor komunal, genset, mesin pengolah hasil panen.</p>
+      <p>Yang perlu disesuaikan hanya parameter kontrak — nama kategori, aturan biaya per kategori, dan antarmuka pengguna. Logika inti factory-proxy dan RPN rules engine-nya tetap sama. Inilah justru nilai arsitektur modular ini: <strong>satu platform, banyak sektor.</strong></p>
+    </div>
+    <div class="tip">Kalau dosen dari Fak. Perikanan sangat antusias: "Apakah sudah ada rencana untuk perikanan?" — jawab jujur: "Belum, ini masih prototipe untuk satu konteks. Tapi validasi teknis yang dilakukan di penelitian ini menjadi fondasi yang bisa dikembangkan ke sektor perikanan pada penelitian lanjutan."</div>
+  </div>
+</div>
+
+<!-- Q26 -->
+<div class="slide-block">
+  <div class="slide-header" style="background:#065f46">
+    <span class="sl-num">Q26</span>
+    <span class="sl-title">Apakah ada regulasi atau hukum di Indonesia yang mengatur penggunaan blockchain dan smart contract?</span>
+    <span class="sl-time">⭐⭐ Mungkin dari Audiens Hukum / Kebijakan / FEMA</span>
+  </div>
+  <div class="slide-body">
+    <div class="narasi">
+      <p>Pertanyaan yang relevan, terutama kalau sistem ini mau diimplementasikan di ranah publik. Di Indonesia saat ini, regulasi yang bersinggungan langsung ada beberapa:</p>
+      <p><strong>Aset kripto</strong> diatur oleh OJK dan Bappebti sejak 2019 — tapi ini lebih ke aspek investasi dan perdagangan aset kripto, bukan penggunaan blockchain sebagai infrastruktur. <strong>UU Pelindungan Data Pribadi (UU No. 27/2022)</strong> berlaku untuk semua sistem yang memproses data pribadi, termasuk sistem berbasis blockchain — ini sudah saya antisipasi dengan memisahkan data pribadi off-chain, tidak masuk blockchain. <strong>Kerangka pemerintahan digital</strong> (Perpres 95/2018 tentang SPBE) membuka ruang untuk inovasi teknologi, tapi belum ada regulasi spesifik yang mengatur smart contract sebagai instrumen kontraktual yang diakui secara hukum.</p>
+      <p>Ini memang salah satu tantangan nyata untuk implementasi: secara hukum perdata Indonesia, kontrak yang dibuat melalui smart contract belum secara eksplisit diakui setara dengan kontrak tertulis konvensional. Ini area yang masih berkembang, dan salah satu alasan mengapa penelitian ini difokuskan sebagai <strong>prototipe teknis</strong> — membuktikan kelayakan teknisnya dahulu, sementara kerangka regulasinya masih dalam proses matang di tingkat kebijakan.</p>
+    </div>
+  </div>
+</div>
+
+<!-- Q27 -->
+<div class="slide-block">
+  <div class="slide-header" style="background:#065f46">
+    <span class="sl-num">Q27</span>
+    <span class="sl-title">Kenapa tidak pakai Excel saja? Atau Google Sheets yang gratis dan semua orang bisa akses?</span>
+    <span class="sl-time">⭐⭐⭐ Hampir Pasti dari Audiens Non-Teknis</span>
+  </div>
+  <div class="slide-body">
+    <div style="background:#fef3c7; border-left:4px solid #f59e0b; padding:10px 14px; font-size:13px; color:#78350f; margin-bottom:14px; border-radius:0 6px 6px 0">
+      <strong>Pertanyaan paling "polos" tapi jawabannya justru paling menunjukkan inti kontribusi penelitian. Jawab dengan santai — jangan meremehkan pertanyaannya.</strong>
+    </div>
+    <div class="narasi">
+      <p>Pertanyaan yang sangat bagus, dan jawabannya menjelaskan inti masalah yang saya coba selesaikan.</p>
+      <p>Google Sheets memang bisa diakses siapa saja — tapi ada satu masalah: <strong>siapa yang punya akses edit bisa mengubah datanya kapan saja, dan tidak ada yang tahu.</strong> Bayangkan sebuah spreadsheet sewa alat pertanian: admin bisa ganti angka Rp 50.000 menjadi Rp 80.000 di riwayat transaksi lama, dan petani tidak punya cara untuk membuktikan bahwa angka itu diubah.</p>
+      <p>Ini bukan soal kejujuran individu — ini soal sistem. Di lingkungan yang melibatkan uang publik, distribusi subsidi, atau transaksi antara pihak yang belum saling percaya, kita tidak bisa mengandalkan "percaya saja sama pengelolanya." Kita butuh sistem yang secara teknis <em>tidak bisa</em> memanipulasi data historis — bukan sistem yang hanya <em>diharapkan</em> tidak memanipulasi.</p>
+      <p>Itulah perbedaan fundamentalnya: Google Sheets memberikan kemudahan akses, tapi tidak memberikan jaminan immutability. Blockchain memberikan jaminan bahwa data yang sudah masuk tidak bisa diubah siapa pun — termasuk orang yang membangun sistemnya. Untuk kasus sewa alat pertanian yang melibatkan dana pemerintah dan kepercayaan publik, properti itu bernilai.</p>
+    </div>
+  </div>
+</div>
+
+<!-- ══════════════════════════════════════════════════════════════════ -->
+<!-- SEKSI: KALIMAT PENYELAMAT -->
+<!-- ══════════════════════════════════════════════════════════════════ -->
+<div style="margin-top:60px; border-top:3px solid #d97706; padding-top:32px;">
+  <h1 style="font-size:22px; border-bottom:3px solid #d97706; padding-bottom:10px; margin-bottom:6px; color:#92400e;">
+    🛟 Kalimat Penyelamat — Situasi Darurat
+  </h1>
+  <div style="font-size:13px; color:var(--gray); margin-bottom:28px;">
+    Kalimat siap pakai untuk kondisi yang tidak terduga — kehabisan waktu, tidak tahu jawabannya, atau pertanyaan di luar dugaan.
+  </div>
+</div>
+
+<div class="slide-block">
+  <div class="slide-header" style="background:#92400e">
+    <span class="sl-num">S1</span>
+    <span class="sl-title">Kalau waktu presentasi hampir habis tapi masih banyak slide</span>
+    <span class="sl-time">Situasi: waktu mepet</span>
+  </div>
+  <div class="slide-body">
+    <div class="narasi">
+      <p><em>"Untuk menjaga waktu, saya akan langsung menuju poin kesimpulan. Slide sebelumnya bisa dilihat di naskah yang sudah saya siapkan."</em></p>
+      <p>Langsung lompat ke Slide 20 (Kesimpulan). Tiga poin kesimpulan adalah inti — dosen lebih suka presenter yang menyelesaikan dengan clear daripada yang tergesa-gesa tapi tidak selesai.</p>
+    </div>
+  </div>
+</div>
+
+<div class="slide-block">
+  <div class="slide-header" style="background:#92400e">
+    <span class="sl-num">S2</span>
+    <span class="sl-title">Kalau tidak tahu jawaban pertanyaan dosen</span>
+    <span class="sl-time">Situasi: blank di pertanyaan</span>
+  </div>
+  <div class="slide-body">
+    <div class="narasi">
+      <p><em>"Terima kasih atas pertanyaannya, Pak/Bu. Saya perlu sedikit berpikir untuk memastikan jawaban saya tepat — boleh saya jawab setelah sesi pertanyaan dari dosen lain selesai?"</em></p>
+      <p>Atau kalau memang tidak tahu: <em>"Saya jujur bahwa ini di luar cakupan yang saya pelajari secara mendalam dalam penelitian ini. Saya catat ini sebagai bahan eksplorasi selanjutnya. Tapi kalau boleh, apakah Bapak/Ibu bisa mengarahkan referensi yang relevan?"</em></p>
+      <p>Mengakui keterbatasan dengan jujur jauh lebih baik daripada menjawab asal-asalan. Dosen biasanya menghargai kejujuran.</p>
+    </div>
+  </div>
+</div>
+
+<div class="slide-block">
+  <div class="slide-header" style="background:#92400e">
+    <span class="sl-num">S3</span>
+    <span class="sl-title">Kalau pertanyaan terlalu jauh dari topik atau membingungkan</span>
+    <span class="sl-time">Situasi: pertanyaan menyimpang</span>
+  </div>
+  <div class="slide-body">
+    <div class="narasi">
+      <p><em>"Boleh saya pastikan dulu apakah saya memahami pertanyaan Bapak/Ibu dengan benar? Yang dimaksud adalah [parafrase pertanyaan], begitu ya?"</em></p>
+      <p>Kalau pertanyaan benar-benar di luar scope: <em>"Pertanyaan ini sangat menarik, tapi berada di luar batasan penelitian yang saya lakukan. Yang bisa saya sampaikan adalah [jawab dari sisi yang Anda kuasai]. Untuk analisis lebih mendalam tentang aspek itu, saya belum memiliki data yang memadai dari penelitian ini."</em></p>
+    </div>
+  </div>
+</div>
+
+<div class="slide-block">
+  <div class="slide-header" style="background:#92400e">
+    <span class="sl-num">S4</span>
+    <span class="sl-title">Kalau dosen sepertinya tidak puas dengan jawaban dan terus mengejar</span>
+    <span class="sl-time">Situasi: dosen probing dalam</span>
+  </div>
+  <div class="slide-body">
+    <div class="narasi">
+      <p><em>"Saya memahami kekhawatiran Bapak/Ibu, dan ini adalah keterbatasan yang memang saya akui secara eksplisit dalam penelitian. [Ulangi poin keterbatasan dengan jelas.] Saya sudah memasukkan ini sebagai arah penelitian lanjutan di bagian saran."</em></p>
+      <p>Kalau tetap dikejar: <em>"Apakah ada saran dari Bapak/Ibu tentang pendekatan yang lebih tepat untuk mengatasi keterbatasan ini? Saya sangat terbuka untuk masukan."</em></p>
+      <p>Mengundang masukan mengubah dinamika dari "diuji" menjadi "berdiskusi" — dan itu jauh lebih nyaman.</p>
+    </div>
+  </div>
+</div>
+
+<!-- RINGKASAN POIN KUNCI -->
+<div style="margin-top:40px; background:var(--navy); color:white; border-radius:14px; padding:24px 28px;">
+  <div style="font-size:16px; font-weight:800; margin-bottom:16px;">🎯 Angka yang Wajib Hafal untuk Tanya Jawab</div>
+  <div style="display:grid; grid-template-columns:1fr 1fr; gap:16px; font-size:14px;">
+    <div style="background:rgba(255,255,255,.1); border-radius:10px; padding:14px 16px;">
+      <div style="font-size:22px; font-weight:900; color:#4ade80; margin-bottom:4px">495.962</div>
+      <div style="opacity:.85">Gas untuk RPN setRules()</div>
+    </div>
+    <div style="background:rgba(255,255,255,.1); border-radius:10px; padding:14px 16px;">
+      <div style="font-size:22px; font-weight:900; color:#f87171; margin-bottom:4px">3.604.010</div>
+      <div style="opacity:.85">Gas untuk Redeployment penuh</div>
+    </div>
+    <div style="background:rgba(255,255,255,.1); border-radius:10px; padding:14px 16px;">
+      <div style="font-size:22px; font-weight:900; color:#60a5fa; margin-bottom:4px">7,3×</div>
+      <div style="opacity:.85">RPN lebih hemat dari Redeployment</div>
+    </div>
+    <div style="background:rgba(255,255,255,.1); border-radius:10px; padding:14px 16px;">
+      <div style="font-size:22px; font-weight:900; color:#fbbf24; margin-bottom:4px">8 opcode</div>
+      <div style="opacity:.85">Kemampuan RPN: opcode 1,2,3,10,11,12,13,20</div>
+    </div>
+  </div>
+  <div style="margin-top:16px; font-size:13px; opacity:.75; line-height:1.7">
+    <strong>Referensi kunci:</strong> Nakamoto (2008) — blockchain · Baliga (2020) — desentralisasi · Efanov & Roschin (2018) — immutability · Farnaghi (2020) — transparansi · Buterin (2014) — smart contract · Wöhrer & Zdun (2018) — upgrade pattern · Zheng et al. (2017) — arsitektur blockchain
+  </div>
+</div>
+
+<div style="text-align:center; margin-top:32px; font-size:12px; color:var(--gray);">
+  Hendrikus Adi Purnama G6501221008 · IPB University MKOM · Seminar Hasil 11 Mei 2026
+</div>
+
+<script>
+(function(){
+  var start = document.getElementById('qa-sections-start');
+  if (!start) return;
+  var el = start;
+  while (el) {
+    if (el.classList && el.classList.contains('slide-block')) {
+      el.classList.add('qa-accordion');
+      (function(block){
+        var hdr = block.querySelector('.slide-header');
+        if (hdr) hdr.addEventListener('click', function(){ block.classList.toggle('qa-open'); });
+      })(el);
+    }
+    el = el.nextElementSibling;
+  }
+})();
+</script>
+</body>
+</html>
