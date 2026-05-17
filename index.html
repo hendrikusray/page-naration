@@ -142,6 +142,17 @@ h1 {
   font-style: italic;
   margin-bottom: 0;
 }
+.bridge {
+  margin-top: 10px;
+  padding: 8px 14px;
+  background: #fefce8;
+  border-left: 4px solid #eab308;
+  border-radius: 0 6px 6px 0;
+  font-size: 13px;
+  color: #713f12;
+  font-style: italic;
+}
+.bridge::before { content: "→ "; font-style: normal; font-weight: 700; color: #ca8a04; }
 /* ── Slide Preview (Screenshot PPT) ── */
 .slide-preview {
   border: 2px solid #cbd5e1;
@@ -221,6 +232,7 @@ h1 {
     <div class="narasi">
       <p>Assalamualaikum warahmatullahi wabarakatuh. Selamat pagi, Bapak, Ibu, dan rekan-rekan sekalian. Perkenalkan, saya <strong>Hendrikus Adi Purnama</strong>, NIM G6501221008, dari Program Magister Ilmu Komputer IPB University.</p>
       <p>Hari ini saya akan menyampaikan hasil penelitian tesis saya — judulnya bisa dilihat langsung di slide. Penelitian ini saya kerjakan di bawah bimbingan Bapak Irman Hermadi dan Bapak Heru Sukoco. Oke, kita mulai.</p>
+      <p class="bridge">Kita mulai dari konteks dan masalah yang melatarbelakangi penelitian ini.</p>
     </div>
   </div>
 </div>
@@ -259,6 +271,7 @@ h1 {
       <p>Traktor, pompa irigasi, cultivator — harganya jauh di atas kemampuan petani kecil. Jadi solusinya adalah <strong>sewa</strong>. Pemerintah pun menjalankan program distribusi alat dan subsidi sewa melalui dinas pertanian — ini didokumentasikan oleh Direktorat Jenderal Prasarana dan Sarana Pertanian, Kementan RI, sebagai salah satu infrastruktur kunci untuk pencapaian target pertanian nasional. Sistem ini sudah berjalan, tapi ada masalah yang tidak bisa diabaikan.</p>
       <p>Sistem sewanya tidak transparan. Catatan transaksi tersimpan di satu tempat yang hanya bisa diakses oleh pengelola. Aturan biaya bisa berubah tanpa pemberitahuan. Kalau ada subsidi yang harusnya diterima petani, tidak ada cara untuk memverifikasi apakah sudah disalurkan dengan benar atau tidak. Dengan kata lain, <strong>tidak ada rekam jejak yang bisa dipercaya oleh semua pihak sekaligus.</strong></p>
       <p>Dari situlah penelitian ini berangkat. Pertanyaannya: <em>bisa tidak kita bangun sistem layanan alat pertanian di mana setiap transaksi tercatat secara permanen, tidak bisa dimanipulasi siapa pun, dan bisa diverifikasi kapan saja oleh petani, penyedia, maupun pengawas dari dinas?</em> Jawaban yang kami usulkan adalah: <strong>smart contract di atas jaringan blockchain.</strong></p>
+      <p class="bridge">Tapi sebelum kita masuk ke sistem, kita perlu samakan pemahaman dulu — apa sebenarnya blockchain dan smart contract itu?</p>
     </div>
     <div class="visual-cue">Tunjuk tiga angka statistik (39,45 jt — 28,2 jt ha — 13%), lalu pindah ke kotak masalah merah, lalu kotak solusi biru.</div>
     <div class="tip">Jika dosen tanya sumber program subsidi alat: <strong>"Direktorat Jenderal Prasarana dan Sarana Pertanian, Kementerian Pertanian RI"</strong> — disebutkan dalam tesis Bab I (Latar Belakang). Program ini mencakup lima infrastruktur enabler: (i) air, (ii) pupuk &amp; pestisida, (iii) alat &amp; mesin pertanian, (iv) perluasan lahan, (v) pembiayaan. Untuk statistik petani &amp; lahan: <strong>BPS 2023 / Isnan et al. 2023</strong> (keduanya ada di daftar pustaka tesis).</div>
@@ -304,6 +317,7 @@ h1 {
       <p>Secara teori, blockchain adalah sistem penyimpanan data terdistribusi berbasis jaringan <em>peer-to-peer</em> yang bersifat <em>trustless</em> — tidak memerlukan pihak ketiga yang dipercaya (Nakamoto 2008). Tiga karakteristik utamanya: <strong>terdesentralisasi</strong> — data tersebar di ribuan node, tidak ada yang pegang kendali tunggal (Baliga 2020); <strong>immutable</strong> — data yang sudah masuk tidak bisa diubah (Efanov &amp; Roschin 2018); dan <strong>transparan</strong> — siapa pun bisa verifikasi kapan saja tanpa izin (Farnaghi 2020).</p>
       <p><strong>Agar lebih mudah dibayangkan —</strong> blockchain seperti buku catatan bersama yang salinannya dipegang ribuan orang sekaligus. Setiap catatan baru langsung tersebar ke semua, dan tidak ada satu pun yang bisa mengubah catatan lama tanpa semua orang tahu.</p>
       <p>Di atas blockchain itu, ada yang namanya <em>smart contract</em> — program yang berjalan otomatis ketika kondisi terpenuhi, tanpa perantara (Buterin 2014; Mohanta et al. 2018). Analoginya seperti <strong>mesin vending otomatis</strong>: masukkan uang, pilih barang — kalau syarat terpenuhi, barang langsung keluar sendiri, tanpa penjaga toko, tanpa negosiasi. Di sistem ini: petani kirim transaksi → smart contract periksa syarat → jika terpenuhi, dana dikunci dan status sewa tercatat permanen di blockchain.</p>
+      <p class="bridge">Nah, sekarang kita sudah paham apa itu blockchain. Lalu, apa konkretnya yang berbeda antara sistem biasa dan sistem berbasis blockchain ini?</p>
     </div>
     <div class="visual-cue">Tunjuk definisi di slide, lalu tiga badge karakteristik (terdesentralisasi → immutable → transparan), lalu diagram node jaringan, lalu ilustrasi mesin vending. Referensi sudah muncul di slide sebagai pendukung visual.</div>
     <div class="tip">Referensi kunci: Nakamoto (2008) + Baliga (2020) untuk definisi & desentralisasi; Efanov & Roschin (2018) untuk immutability; Farnaghi & Mansourian (2020) untuk transparansi; Buterin (2014) untuk smart contract. Tidak perlu disebut semua dalam presentasi — cukup sebut kalau dosen tanya. Slide ini sekarang ~1,5 menit karena ada penjelasan teori — sesuaikan pace bicara.</div>
@@ -370,6 +384,7 @@ h1 {
       <p>Kalau kita bandingkan langsung, perbedaan paling mendasar ada di <strong>siapa yang memegang kendali</strong>. Di sistem biasa, semua data tersimpan di satu server milik satu pihak — artinya pihak itu bisa ubah data, hapus rekam jejak, atau atur distribusi dana sesukanya. Kita tidak punya cara untuk verifikasi apakah itu benar atau tidak.</p>
       <p>Di sistem berbasis blockchain, tidak ada satu pihak pun yang pegang kendali penuh. Data tersebar, aturan biaya terbuka untuk dibaca siapa saja, dana didistribusikan otomatis oleh kode — bukan oleh manusia — dan setiap transaksi yang sudah tercatat tidak bisa dihapus atau diubah.</p>
       <p>Analoginya gampang: sistem biasa itu seperti <strong>rekening bank</strong> — kita harus percaya bank tidak salah catat. Blockchain itu seperti <strong>buku kas koperasi</strong> yang salinannya dipegang semua anggota sekaligus — tidak ada yang bisa ubah tanpa semua tahu.</p>
+      <p class="bridge">Tapi blockchain sendiri pun tidak sempurna. Smart contract konvensional masih punya keterbatasan yang perlu kita atasi — dan itu yang menjadi inti masalah penelitian ini.</p>
     </div>
     <div class="visual-cue">Baca tabel baris per baris — merah kiri (sistem biasa), hijau kanan (blockchain). Tutup dengan analogi bank vs koperasi.</div>
   </div>
@@ -392,6 +407,7 @@ h1 {
     <div class="narasi">
       <p>Meski blockchain menjanjikan, smart contract konvensional punya tiga kelemahan yang relevan. <strong>Pertama</strong>, aturan biaya tidak bisa diubah setelah kontrak dipasang — bayangkan peraturan yang dicetak permanen di papan, tidak bisa diganti tanpa buang papannya. <strong>Kedua</strong>, kalau aturan mau diubah, harus pasang kontrak baru dari awal dengan "alamat" berbeda — semua riwayat transaksi lama ikut terputus. <strong>Ketiga</strong>, memasang ulang kontrak itu sangat mahal secara komputasi — inilah yang nanti kita buktikan dengan angka gas.</p>
       <p>Penelitian ini mengusulkan dua solusi. <strong>Solusi A — pola Factory-Proxy</strong>: kontrak bisa diperbarui isinya tanpa ganti alamat, seperti merenovasi isi rumah tanpa pindah ke alamat baru. <strong>Solusi B — Rules Engine berbasis RPN</strong>: aturan biaya tersimpan sebagai instruksi yang bisa diperbarui kapan saja. Contoh sederhana: dalam penulisan biasa "3 + 4 = 7", dalam RPN ditulis "<code>3 4 +</code>" — angkanya dulu, baru operator di belakang.</p>
+      <p class="bridge">Dari ketiga masalah dan dua solusi ini, kita bisa merumuskan pertanyaan penelitian yang lebih spesifik.</p>
     </div>
     <div class="visual-cue">Tunjuk tiga badge masalah merah dengan referensinya, lalu kotak solusi A dan B, lalu contoh notasi RPN.</div>
   </div>
@@ -413,6 +429,7 @@ h1 {
     </div>
     <div class="narasi">
       <p>Dari latar belakang tersebut, penelitian ini merumuskan tiga pertanyaan utama. <strong>Pertama:</strong> bagaimana merancang arsitektur smart contract yang fleksibel dan dapat diperbarui menggunakan pola factory-proxy EIP-1967? <strong>Kedua:</strong> seberapa efisien pendekatan RPN setRules() dalam hal biaya komputasi atau gas dibandingkan redeployment kontrak penuh? <strong>Ketiga:</strong> bagaimana menjamin transparansi dan ketertelusuran seluruh transaksi sewa yang dapat diverifikasi secara independen?</p>
+      <p class="bridge">Dari tiga pertanyaan itu, kita turunkan tiga tujuan yang hendak dicapai dalam penelitian ini.</p>
     </div>
     <div class="visual-cue">Tunjuk tiga badge nomor 1, 2, 3 secara berurutan.</div>
   </div>
@@ -435,6 +452,7 @@ h1 {
     <div class="narasi">
       <p>Tujuan penelitian ini ada tiga, menjawab langsung rumusan masalah tadi: <strong>satu</strong>, merancang arsitektur kontrak pintar berbasis factory-proxy EIP-1967 dengan RPN rules engine yang dapat diperbarui tanpa redeployment; <strong>dua</strong>, mengukur dan membandingkan efisiensi biaya komputasi antara RPN setRules() dan redeployment kontrak penuh; <strong>tiga</strong>, menjamin transparansi dan ketertelusuran transaksi sewa yang dapat diverifikasi secara independen.</p>
       <p>Manfaat penelitian: penelitian ini menghasilkan prototipe tervalidasi yang membuktikan penerapan factory-proxy EIP-1967 dan RPN rules engine pada sistem sewa alat pertanian, dan dapat dikembangkan lebih lanjut ke skala produksi.</p>
+      <p class="bridge">Kita sudah tahu apa yang ingin dicapai. Sekarang, bagaimana cara kita mencapainya? Mari masuk ke pendekatan metode penelitian.</p>
     </div>
     <div class="visual-cue">Tunjuk tiga tujuan, lalu satu kalimat manfaat di bawah.</div>
   </div>
@@ -472,6 +490,7 @@ h1 {
     <div class="narasi">
       <p>Penelitian ini menggunakan <strong>metode prototyping</strong>, dengan empat tahap iteratif. <strong>Requirements Planning</strong> — identifikasi kebutuhan fungsional: alur sewa, pengelolaan kontrak, auditabilitas transaksi. <strong>Quick Design</strong> — perancangan arsitektur smart contract factory-proxy dan skema data on-chain/off-chain. <strong>Build Prototype</strong> — implementasi iteratif dari smart contract Solidity, backend Node.js, hingga frontend React dengan MetaMask. <strong>Refine and Validate</strong> — pengukuran gas, perbandingan efisiensi, verifikasi transparansi on-chain.</p>
       <p>Kenapa prototyping? Karena blockchain memiliki risiko tinggi jika salah desain dari awal — smart contract yang sudah di-deploy sangat sulit diubah. Dengan validasi berlapis di setiap tahap, kesalahan fundamental bisa dideteksi lebih awal sebelum terlanjur ke lapisan berikutnya.</p>
+      <p class="bridge">Dengan empat tahap prototyping itu, kita masuk ke bagian hasil. Dan yang pertama adalah rancangan use case — siapa saja yang terlibat dan apa yang mereka lakukan dalam sistem ini.</p>
     </div>
     <div class="visual-cue">Tunjuk empat kartu tahap dari kiri ke kanan, lalu kotak "Kenapa Prototyping?" di bawah.</div>
   </div>
@@ -509,6 +528,7 @@ h1 {
     <div class="narasi">
       <p>Sistem ini melibatkan tiga aktor dengan tujuh use case. <strong>Admin</strong> mengelola kategori kontrak pintar (UC-1) dan memperbarui aturan biaya berbasis RPN (UC-2). <strong>Penyedia Alat</strong> mendaftarkan dan mengelola alat (UC-3) serta mengelola subsidi penyedia (UC-4). <strong>Petani</strong> melakukan penyewaan alat pertanian (UC-5) dan pengembalian beserta settlement dana (UC-6). Semua aktor bisa mengakses riwayat dan monitoring audit on-chain (UC-7).</p>
       <p>Yang membedakan dari sistem konvensional: UC-1 (perubahan aturan biaya), UC-3 (registrasi alat), UC-5 (sewa), dan UC-6 (pengembalian &amp; settlement) semua berinteraksi langsung dengan smart contract — tercatat permanen dan bisa diverifikasi siapa saja secara independen.</p>
+      <p class="bridge">Setelah kita tahu siapa yang terlibat dan apa yang mereka lakukan, sekarang kita lihat bagaimana arsitektur teknisnya dirancang untuk mendukung semua itu.</p>
     </div>
     <div class="visual-cue">Tunjuk masing-masing aktor dan garis use case-nya: Admin → UC-1/UC-2, Penyedia → UC-3/UC-4, Petani → UC-5/UC-6, semua → UC-7. Tekankan "ini yang langsung interaksi ke blockchain" saat tunjuk UC-1, UC-3, UC-5, UC-6.</div>
   </div>
@@ -534,6 +554,7 @@ h1 {
       <p><strong>Lapisan on-chain</strong>: lima smart contract yang saling terhubung — <em>ServiceFactory</em> (pusat manajemen + registry admin), <em>ServiceCategoryProxy</em> (alamat tetap, upgradeable), <em>ServiceCategoryV2</em> (logika bisnis + RPN rules engine), <em>EquipmentRegistry</em> (anchor metadata alat), dan <em>IdentityRegistry</em> (manajemen identitas dan peran).</p>
       <p>Prinsip kunci: <strong>smart contract adalah sumber kebenaran utama</strong>. MongoDB hanya cache untuk kenyamanan UI — jika database dimanipulasi, data on-chain tetap bisa diverifikasi siapa saja secara independen.</p>
       <p>Kenapa dipisah antara on-chain dan off-chain? Karena membaca data dari blockchain itu lambat dan mahal jika dilakukan untuk setiap tampilan UI. Bayangkan setiap kali halaman daftar alat dibuka, harus query ribuan blok — itu tidak efisien. Jadi MongoDB dipakai untuk kecepatan tampilan, tapi untuk hal-hal kritis seperti settle dana dan verifikasi aturan, tetap mengacu ke on-chain.</p>
+      <p class="bridge">Arsitektur ini kemudian kita wujudkan dalam prototipe nyata. Mari kita lihat tampilan aplikasinya.</p>
     </div>
     <div class="visual-cue">Tunjuk tiga tier dari atas ke bawah: Frontend → Backend → On-chain. Tekankan label "off-chain" dan "on-chain" di sisi kanan. Akhiri dengan prinsip "smart contract = sumber kebenaran."</div>
     <div class="tip">Slide ini paling teknis. Bicara pelan dan tunjuk setiap komponen satu per satu.</div>
@@ -556,6 +577,7 @@ h1 {
     </div>
     <div class="narasi">
       <p>Prototipe diimplementasikan menggunakan React JS. Di sisi kiri, tampilan <strong>perubahan aturan kategori</strong> — admin bisa memperbarui aturan biaya melalui antarmuka visual yang langsung mengirim transaksi ke smart contract. Di sisi kanan, tampilan <strong>riwayat transaksi</strong> — menampilkan perbandingan data database dan data on-chain secara berdampingan, memungkinkan admin memverifikasi konsistensinya.</p>
+      <p class="bridge">Salah satu fitur kunci yang tadi ada di tampilan kiri adalah perubahan aturan biaya via smart contract. Mari kita lihat lebih detail bagaimana itu bekerja.</p>
     </div>
     <div class="visual-cue">Tunjuk tampilan kiri (perubahan aturan) lalu tampilan kanan (riwayat transaksi DB vs On-chain).</div>
   </div>
@@ -578,6 +600,7 @@ h1 {
     <div class="narasi">
       <p>Inilah bukti nyata fleksibilitas sistem. Di terminal, kita bisa lihat event <code>RulesUpdatedSigned</code> — setiap kali aturan biaya diperbarui, smart contract memancarkan event ini yang tercatat permanen di blockchain.</p>
       <p>Aturan biaya ditulis dalam format RPN — cara ringkas menyimpan instruksi perhitungan di dalam smart contract. Contoh konkret: untuk menghitung biaya 10% dari harga alat Rp 50.000 — instruksinya hanya tiga langkah: <strong>ambil harga alat</strong> → <strong>ambil angka 10</strong> → <strong>hitung persentase</strong>. Hasilnya: 10% × Rp 50.000 = <strong>Rp 5.000</strong>. Instruksi tiga langkah ini bisa diganti kapan saja — misalnya diubah jadi 15% saat musim panen — tanpa perlu pasang ulang kontrak dari awal.</p>
+      <p class="bridge">Selain bukti fleksibilitas, kita juga punya bukti transparansi — data sewa yang tersimpan on-chain dan bisa diakses siapa saja. Sekaligus, kita ukur berapa biaya komputasinya.</p>
     </div>
     <div class="visual-cue">Tunjuk terminal output di atas, lalu tabel opcode, lalu contoh perhitungan PUSH→PUSH→PERCENT = Rp 5.000 di bawah.</div>
   </div>
@@ -600,6 +623,7 @@ h1 {
     <div class="narasi">
       <p>Di sisi kiri, data sewa yang tersimpan on-chain — dalam format JSON yang bisa diakses dan diverifikasi siapa saja tanpa perlu akses ke database. Ini adalah bukti transparansi: rentalId, toolId, alamat petani, status, biaya total — semua tercatat permanen.</p>
       <p>Di sisi kanan, hasil pengukuran gas. RPN setRules() mengonsumsi <strong>495.962 gas</strong>. Redeployment kontrak penuh mengonsumsi <strong>3.604.010 gas</strong>. Rasio: <strong>7,3 kali lebih hemat</strong>. Angka ini bukan estimasi — ini hasil pengukuran langsung dari eksekusi di jaringan Hardhat.</p>
+      <p class="bridge">Angka-angka itu kita rangkum dalam tabel perbandingan lengkap agar gambarannya lebih utuh.</p>
     </div>
     <div class="visual-cue">Tunjuk JSON data di kiri, lalu terminal gas measurement di kanan. Beri jeda saat menyebut angka 495.962 dan 3.604.010.</div>
     <div class="tip">Angka gas ini yang paling penting untuk pertanyaan dosen. Hafal: 495.962 vs 3.604.010 = 7,3×.</div>
@@ -625,6 +649,7 @@ h1 {
       <p>Dengan redeployment: setiap perubahan kebijakan butuh kontrak baru dengan alamat baru, semua referensi harus diupdate manual, riwayat lama terputus, tidak ada rekam jejak versi, biaya 3.604.010 gas, dan tidak praktis karena terlalu mahal dan berisiko.</p>
       <p>Kesimpulan visual: <strong>7,3 kali lebih hemat</strong> — ini kontribusi terukur penelitian ini.</p>
       <p>Dan ini bukan sekadar angka. Dalam konteks sistem yang aturannya bisa berubah-ubah — misalnya tarif sewa naik musim panen, atau ada kebijakan diskon dari dinas — kemampuan memperbarui aturan dengan biaya rendah tanpa mengorbankan transparansi adalah nilai nyata yang ditawarkan arsitektur ini.</p>
+      <p class="bridge">Dengan semua hasil pengukuran itu, kita bisa menarik kesimpulan yang menjawab langsung ketiga tujuan penelitian.</p>
     </div>
     <div class="visual-cue">Baca tabel baris per baris, tunjuk kolom biru (RPN) vs merah (Redeployment). Akhiri dengan angka besar "7,3×" di kartu hijau.</div>
   </div>
@@ -664,6 +689,7 @@ h1 {
       <p><strong>Tujuan pertama: fleksibilitas dan upgradeability.</strong> Terbukti. Pola factory-proxy EIP-1967 berhasil diterapkan — upgrade dari V1 ke V2 berhasil dilakukan tanpa memutus referensi alamat kontrak dan tanpa menghilangkan data sewa yang sudah ada. RPN rules engine memungkinkan perubahan kebijakan kapan saja tanpa redeployment.</p>
       <p><strong>Tujuan kedua: efisiensi biaya komputasi atau gas.</strong> Terbukti. Pengukuran menunjukkan RPN setRules() hanya mengonsumsi <strong>495.962 gas</strong>, dibandingkan <strong>3.604.010 gas</strong> untuk redeployment penuh — 7,3 kali lebih hemat. Ini menjawab secara kuantitatif bahwa RPN jauh lebih praktis untuk perubahan kebijakan yang rutin.</p>
       <p><strong>Tujuan ketiga: transparansi dan ketertelusuran transaksi.</strong> Terbukti. Semua transaksi sewa, perubahan aturan, dan aliran dana tercatat sebagai event on-chain yang dapat diverifikasi siapa saja secara independen. Setiap sewa menyimpan snapshot versi aturan saat itu — audit trail historis tetap utuh meskipun aturan berubah.</p>
+      <p class="bridge">Sebagai penelitian prototipe, tentu ada ruang yang bisa dikembangkan lebih lanjut. Ini sarannya.</p>
     </div>
     <div class="visual-cue">Tunjuk tiga kotak kesimpulan secara berurutan. Beri jeda setelah setiap poin.</div>
     <div class="tip">Bicara tegas di sini — ini adalah inti jawaban penelitian. Jangan terburu-buru. Ulangi angka 495.962 dan 3.604.010 agar audiens mengingatnya.</div>
@@ -686,6 +712,7 @@ h1 {
     </div>
     <div class="narasi">
       <p>Sebagai saran pengembangan ke depan, ada empat arah: <strong>verifikasi keamanan formal</strong> agar jaminan keamanan kontrak dapat dibuktikan secara matematis; <strong>perluasan rules engine</strong> untuk mendukung logika kondisional yang lebih kompleks; <strong>tata kelola terdesentralisasi</strong> berbasis voting on-chain agar tidak bergantung pada satu admin; dan <strong>uji kelayakan di jaringan publik</strong> termasuk opsi Layer 2 seperti Polygon atau Arbitrum.</p>
+      <p class="bridge">Sebelum sesi tanya jawab, inilah seluruh referensi yang menjadi landasan penelitian ini.</p>
     </div>
     <div class="visual-cue">Tunjuk empat badge saran secara berurutan. Tidak perlu detail — cukup sebutkan judulnya.</div>
   </div>
