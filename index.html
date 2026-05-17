@@ -1812,6 +1812,96 @@ h1 {
   </div>
 </div>
 
+<!-- KATEGORI 9: PERTANYAAN PALING KRITIS -->
+<div style="background:#7c3aed; color:white; border-radius:10px; padding:10px 18px; margin-bottom:16px; margin-top:28px; font-weight:700; font-size:14px; letter-spacing:.05em;">
+  🔴 KATEGORI 9 — Pertanyaan Paling Kritis yang Harus Disiapkan
+</div>
+
+<!-- Q28 -->
+<div class="slide-block">
+  <div class="slide-header" style="background:#5b21b6">
+    <span class="sl-num">Q28</span>
+    <span class="sl-title">Masyarakat tidak paham teknologi, apalagi blockchain — bagaimana sistem ini bisa diimplementasikan ke petani nyata?</span>
+    <span class="sl-time">⭐⭐⭐ Hampir Pasti Keluar — dari FEMA / Fak. Pertanian</span>
+  </div>
+  <div class="slide-body">
+    <div style="background:#ede9fe; border-left:4px solid #7c3aed; padding:10px 14px; font-size:13px; color:#3b0764; margin-bottom:14px; border-radius:0 6px 6px 0">
+      <strong>Pertanyaan ini menyerang gap antara teknologi dan realitas lapangan. Jawab dengan lapisan abstraksi — petani tidak perlu paham blockchain, seperti tidak perlu paham TCP/IP untuk bisa WhatsApp.</strong>
+    </div>
+    <div class="narasi">
+      <p>Petani tidak perlu tahu apa itu blockchain. Sama seperti ketika kita transfer uang lewat mobile banking, kita tidak perlu tahu bagaimana sistem RTGS bekerja, tidak perlu tahu apa itu protokol ISO 20022 — kita cukup ketik nominal dan tekan kirim.</p>
+      <p>Dalam sistem ini, yang berinteraksi langsung dengan blockchain adalah <strong>lapisan operator</strong> — petugas dinas, pengelola koperasi, atau penyedia alat. Mereka yang menandatangani transaksi ke blockchain. Petani cukup berinteraksi dengan antarmuka sederhana yang sudah familiar: pilih alat, konfirmasi sewa, terima notifikasi. Kompleksitas blockchain tersembunyi di balik antarmuka itu.</p>
+      <p>Analoginya: nasabah yang pakai BRILink di warung desa tidak perlu tahu cara kerja sistem core banking BRI. Agen BRILink-lah yang punya perangkat dan akses. Pola yang sama bisa diterapkan di sini — petani tidak perlu punya wallet sendiri, yang perlu punya akses adalah operator lapangannya.</p>
+      <p>Untuk masa depan yang lebih jauh, teknologi <strong>account abstraction</strong> sudah memungkinkan login berbasis nomor HP atau OTP tanpa private key — artinya petani bisa punya akun blockchain tanpa tahu itu blockchain. Ini bukan fiksi ilmiah — sudah berjalan di beberapa aplikasi DeFi hari ini.</p>
+    </div>
+    <div class="tip">Kunci jawaban: abstraksi lapisan. Teknologi yang baik tidak terlihat oleh pengguna akhir.</div>
+  </div>
+</div>
+
+<!-- Q29 -->
+<div class="slide-block">
+  <div class="slide-header" style="background:#5b21b6">
+    <span class="sl-num">Q29</span>
+    <span class="sl-title">Kenapa pakai public blockchain? Kan ada private blockchain seperti Hyperledger yang lebih terkontrol dan lebih sesuai untuk enterprise?</span>
+    <span class="sl-time">⭐⭐⭐ Sangat Mungkin dari Dosen Teknis</span>
+  </div>
+  <div class="slide-body">
+    <div style="background:#ede9fe; border-left:4px solid #7c3aed; padding:10px 14px; font-size:13px; color:#3b0764; margin-bottom:14px; border-radius:0 6px 6px 0">
+      <strong>Ini pilihan desain yang disengaja, bukan ketidaktahuan. Jawab tegas — private blockchain tidak menyelesaikan masalah fundamentalnya.</strong>
+    </div>
+    <div class="narasi">
+      <p>Private blockchain seperti Hyperledger Fabric memang valid untuk banyak use case — tapi tidak untuk masalah yang ingin saya selesaikan. Begini alasannya.</p>
+      <p>Di private blockchain, node hanya boleh dijalankan oleh anggota konsorsium yang sudah disetujui. Artinya ada pertanyaan yang tidak bisa dijawab: <strong>siapa yang mengontrol konsorsium itu?</strong> Kalau jawabannya adalah dinas pertanian atau satu lembaga pemerintah, maka kita sudah kembali ke titik awal — kita harus percaya pada satu pihak untuk tidak memanipulasi data. Private blockchain hanya memindahkan kepercayaan dari satu server ke konsorsium tertutup. Masalah fundamentalnya tetap sama.</p>
+      <p>Tujuan penelitian ini adalah membuktikan bahwa transparansi dan ketertelusuran bisa dijamin secara teknis <em>tanpa bergantung pada kepercayaan siapa pun</em>. Itu hanya mungkin di public blockchain — di mana siapa pun, termasuk petani, penyedia, atau masyarakat umum, bisa verifikasi data transaksinya tanpa minta izin ke pihak mana pun.</p>
+      <p>Kalau mau analogi: private blockchain itu seperti audit keuangan yang dikerjakan oleh auditor internal perusahaan itu sendiri. Hasilnya mungkin benar, tapi tidak ada independensi. Public blockchain seperti audit yang dikerjakan oleh ribuan auditor independen yang tidak kenal satu sama lain — hasilnya bisa dipercaya bukan karena kita percaya auditornya, tapi karena ribuan pihak tidak tergantung sudah memverifikasinya.</p>
+    </div>
+    <div class="tip">Kalau dosen kejar "tapi data jadi publik semua dong?" — langsung jawab dengan Q30 di bawah.</div>
+  </div>
+</div>
+
+<!-- Q30 -->
+<div class="slide-block">
+  <div class="slide-header" style="background:#5b21b6">
+    <span class="sl-num">Q30</span>
+    <span class="sl-title">Kalau pakai public blockchain, data transaksinya kan terbuka untuk umum — bagaimana privasi pengguna? Apakah tidak melanggar regulasi data?</span>
+    <span class="sl-time">⭐⭐⭐ Sangat Mungkin — dari Dosen Hukum / Kebijakan / FEMA</span>
+  </div>
+  <div class="slide-body">
+    <div style="background:#ede9fe; border-left:4px solid #7c3aed; padding:10px 14px; font-size:13px; color:#3b0764; margin-bottom:14px; border-radius:0 6px 6px 0">
+      <strong>Ini pertanyaan yang sering membuat peneliti blockchain kelabakan. Jawabannya ada di desain: data pribadi tidak masuk blockchain sama sekali.</strong>
+    </div>
+    <div class="narasi">
+      <p>Pertanyaan yang sangat penting, dan jawabannya ada di keputusan desain arsitektur dari awal. Sistem ini menggunakan <strong>pendekatan hybrid</strong> — memisahkan dengan tegas mana data yang masuk blockchain dan mana yang tidak.</p>
+      <p>Yang tersimpan <strong>on-chain</strong>: ID transaksi, hash metadata alat, alamat wallet (bukan nama), status sewa, jumlah dana, dan timestamp. Semua ini adalah data transaksi — bukan data pribadi.</p>
+      <p>Yang disimpan <strong>off-chain</strong> di database: nama pengguna, nomor identitas, alamat fisik, nomor HP — semua data pribadi yang dilindungi UU Pelindungan Data Pribadi No. 27/2022. Data ini tidak pernah menyentuh blockchain.</p>
+      <p>Analoginya: di catatan pengadilan yang bisa diakses publik, yang tercatat adalah nomor perkara, tanggal, dan putusan — bukan identitas lengkap semua pihak. Prinsip yang sama diterapkan di sini. Yang publik adalah <em>fakta transaksi</em>, bukan <em>identitas personal</em> pelakunya.</p>
+      <p>Untuk kepatuhan regulasi: desain ini sudah mempertimbangkan UU PDP 2022. Data yang masuk blockchain tidak masuk dalam kategori data pribadi yang diatur UU tersebut, sehingga tidak ada pelanggaran secara prinsip. Tentu implementasi produksi skala penuh perlu legal review lebih mendalam — dan itu bagian dari saran penelitian lanjutan.</p>
+    </div>
+  </div>
+</div>
+
+<!-- Q31 -->
+<div class="slide-block">
+  <div class="slide-header" style="background:#5b21b6">
+    <span class="sl-num">Q31</span>
+    <span class="sl-title">Kalau tahu gas di Ethereum mahal dan solusinya Layer 2 — kenapa tidak langsung pakai Layer 2 dari awal di penelitian ini?</span>
+    <span class="sl-time">⭐⭐⭐ Pertanyaan Paling Tajam — dari Dosen Teknis Senior</span>
+  </div>
+  <div class="slide-body">
+    <div style="background:#ede9fe; border-left:4px solid #7c3aed; padding:10px 14px; font-size:13px; color:#3b0764; margin-bottom:14px; border-radius:0 6px 6px 0">
+      <strong>Pertanyaan ini kelihatan sederhana tapi menjebak. Jawab dengan tegas: ini bukan karena tidak tahu, tapi karena Layer 2 bukan yang sedang diuji.</strong>
+    </div>
+    <div class="narasi">
+      <p>Pertanyaan yang sangat tajam, dan saya senang ditanya ini karena jawabannya menunjukkan inti dari apa yang sebenarnya diuji dalam penelitian ini.</p>
+      <p>Penelitian ini menguji dua hal: <strong>apakah arsitektur factory-proxy EIP-1967 bisa bekerja dengan benar</strong>, dan <strong>seberapa efisien RPN setRules() dibandingkan redeployment</strong>. Kedua pertanyaan itu bisa dijawab sepenuhnya di lingkungan Hardhat lokal — karena EVM (Ethereum Virtual Machine) yang menjalankan smart contract adalah <strong>identik</strong> di Hardhat, di Polygon, di Arbitrum, dan di Ethereum mainnet. Bytecode yang sama, opcode yang sama, gas usage yang sama.</p>
+      <p>Kalau saya deploy ke Layer 2 publik seperti Polygon, saya perlu: akun dengan saldo MATIC sungguhan, konfigurasi jaringan yang bergantung pada koneksi internet dan uptime node Polygon, variabel eksternal yang di luar kendali peneliti. Semua itu menambah kompleksitas yang tidak relevan dengan pertanyaan penelitian — dan justru bisa mengurangi reprodusibilitas hasil karena gas price di jaringan publik berfluktuasi.</p>
+      <p>Yang diukur penelitian ini adalah <strong>gas usage</strong> — satuan komputasi yang deterministik dan tidak berubah antara jaringan. Bukan gas price dalam rupiah yang bergantung pada kondisi pasar. Jadi pilihan Hardhat bukan keterbatasan — itu keputusan metodologis yang tepat untuk menjaga isolasi variabel.</p>
+      <p>Layer 2 masuk sebagai saran bukan karena terlewat, tapi karena itu adalah pertanyaan penelitian yang berbeda: "seberapa layak secara ekonomi di jaringan publik?" — dan itu adalah penelitian lanjutan yang valid untuk dikerjakan di atas fondasi yang sudah dibuktikan ini.</p>
+    </div>
+    <div class="tip">Kuncinya: gas usage ≠ gas price. Hardhat mengukur usage yang deterministik. Layer 2 relevan untuk price — pertanyaan penelitian yang berbeda.</div>
+  </div>
+</div>
+
 <!-- ══════════════════════════════════════════════════════════════════ -->
 <!-- SEKSI: KALIMAT PENYELAMAT -->
 <!-- ══════════════════════════════════════════════════════════════════ -->
